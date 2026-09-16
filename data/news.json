@@ -1,5 +1,15 @@
 [
   {
+    "id": "news-20260916-02",
+    "date": "2026-09-16",
+    "type": "UPDATE",
+    "typeLabel": "UPDATE",
+    "badgeClass": "badge-update",
+    "title": "【ｉサークル生対談】かりんさん（Fw6,000人で月15万円）楽天アフィ攻略対談を公開しました",
+    "url": "guides/karin-rakuten-affiliate-monetize.html",
+    "isNew": true
+  },
+  {
     "id": "news-20260916",
     "date": "2026-09-16",
     "type": "UPDATE",
