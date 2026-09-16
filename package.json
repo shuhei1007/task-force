@@ -1,0 +1,17 @@
+{
+  "name": "instagram-dashboard",
+  "version": "1.0.0",
+  "description": "Instagram Circle Dashboard & Knowledge Base",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-data.mjs",
+    "backup": "node scripts/backup-data.mjs",
+    "sync": "node scripts/sync-sheets.mjs && node scripts/generate-guides.mjs",
+    "build:search": "node scripts/build-search-index.mjs",
+    "build": "node scripts/backup-data.mjs && node scripts/validate-data.mjs && node scripts/build-search-index.mjs",
+    "preview": "python3 -m http.server 8080"
+  },
+  "keywords": ["instagram", "dashboard"],
+  "author": "shuhei",
+  "license": "ISC"
+}

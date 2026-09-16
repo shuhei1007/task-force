@@ -1,0 +1,14 @@
+# OS / System
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# Local backups (Gitで履歴管理するため除外)
+backups/
+_site/
+
+# IDE / Logs
+.vscode/
+*.log
