@@ -1,0 +1,27 @@
+{
+  "spreadsheetId": "",
+  "csvUrls": {
+    "news": "",
+    "schedule": "",
+    "assignments": "",
+    "knowledge": ""
+  },
+  "sheets": {
+    "news": {
+      "gid": "0",
+      "targetFile": "data/news.json"
+    },
+    "schedule": {
+      "gid": "",
+      "targetFile": "data/schedule.json"
+    },
+    "assignments": {
+      "gid": "",
+      "targetFile": "data/assignments.json"
+    },
+    "knowledge": {
+      "gid": "",
+      "targetFile": "data/knowledge.json"
+    }
+  }
+}
