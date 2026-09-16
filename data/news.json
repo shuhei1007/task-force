@@ -1,0 +1,42 @@
+[
+  {
+    "id": "news-20260916",
+    "date": "2026-09-16",
+    "type": "UPDATE",
+    "typeLabel": "UPDATE",
+    "badgeClass": "badge-update",
+    "title": "ノウハウを追加しました",
+    "url": "knowledge.html",
+    "isNew": true
+  },
+  {
+    "id": "news-20260912",
+    "date": "2026-09-12",
+    "type": "EVENT",
+    "typeLabel": "EVENT",
+    "badgeClass": "badge-event",
+    "title": "名古屋オフ会まとめを公開しました",
+    "url": "live_meetup_2026_09_nagoya.html",
+    "isNew": true
+  },
+  {
+    "id": "news-20260821",
+    "date": "2026-08-21",
+    "type": "UPDATE",
+    "typeLabel": "UPDATE",
+    "badgeClass": "badge-update",
+    "title": "ノウハウ一覧を更新しました",
+    "url": "knowledge.html",
+    "isNew": false
+  },
+  {
+    "id": "news-20260820",
+    "date": "2026-08-20",
+    "type": "UPDATE",
+    "typeLabel": "UPDATE",
+    "badgeClass": "badge-update",
+    "title": "ポータルサイトを開設しました",
+    "url": "",
+    "isNew": false
+  }
+]

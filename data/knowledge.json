@@ -1,0 +1,74 @@
+[
+  {
+    "id": "youtube-reels-5tips",
+    "date": "2026-09-16",
+    "displayDate": "9月16日追加",
+    "category": "YouTube",
+    "badgeClass": "badge-red",
+    "title": "Instagram副業で稼げる人と稼げない人の決定的な5つの違い",
+    "excerpt": "稼げない人が陥る5つのNG特徴と対策、フォロワー目線の本質的な思考法を解説します。",
+    "url": "guides/youtube-reels-5tips.html",
+    "tags": ["初心者向け", "リール", "マネタイズ", "アカウント設計"],
+    "isNew": true
+  },
+  {
+    "id": "worldview-guide",
+    "date": "2026-09-07",
+    "displayDate": "9月7日更新",
+    "category": "世界観",
+    "badgeClass": "badge-purple",
+    "title": "世界観の構築と運用",
+    "excerpt": "フォロワーを惹きつける世界観作りの基本ステップ、カラーパレットとデザイン統一のコツ。",
+    "url": "guides/worldview-guide.html",
+    "tags": ["デザイン", "アカウント設計", "初級"],
+    "isNew": true
+  },
+  {
+    "id": "comment-dm-automation",
+    "date": "2026-09-07",
+    "displayDate": "9月7日追加",
+    "category": "ツール・自動化",
+    "badgeClass": "badge-indigo",
+    "title": "コメント→DM自動化（コメントオートメーション）",
+    "excerpt": "投稿コメントから自動でDMを送信し、エンゲージメントと成約率を最大化するツールの導入手順。",
+    "url": "guides/comment-dm-automation.html",
+    "tags": ["マネタイズ", "ツール", "中級"],
+    "isNew": true
+  },
+  {
+    "id": "info_2026_09",
+    "date": "2026-09-01",
+    "displayDate": "9月1日追加",
+    "category": "情報共有",
+    "badgeClass": "badge-blue",
+    "title": "2026年9月の情報共有",
+    "excerpt": "9月の強化チーム情報共有内容をまとめています。",
+    "url": "info_2026_09.html",
+    "tags": ["情報共有"],
+    "isNew": false
+  },
+  {
+    "id": "info_2026_08",
+    "date": "2026-08-21",
+    "displayDate": "8月21日追加",
+    "category": "情報共有",
+    "badgeClass": "badge-blue",
+    "title": "2026年8月の情報共有",
+    "excerpt": "8月のライブ・フィードバック・iMateと伝わるストーリーをまとめています。",
+    "url": "info_2026_08.html",
+    "tags": ["情報共有"],
+    "isNew": false
+  },
+  {
+    "id": "info_2026_07",
+    "date": "2026-07-31",
+    "displayDate": "7月31日追加",
+    "category": "情報共有",
+    "badgeClass": "badge-blue",
+    "title": "2026年7月の情報共有",
+    "excerpt": "7月の共有内容をまとめています。",
+    "url": "info_2026_07.html",
+    "tags": ["情報共有"],
+    "isNew": false
+  }
+]

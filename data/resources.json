@@ -1,0 +1,26 @@
+[
+  {
+    "id": "monthly-reflection",
+    "title": "1ヶ月振替会シート",
+    "icon": "📊",
+    "category": "振り返り",
+    "description": "月次振り返り・個人目標・チーム学びの記録",
+    "url": "https://docs.google.com/spreadsheets/d/1lTXk_OujITKDel_6G0kz0kI6F76fScWW2lA50AP68Bo/edit?usp=sharing"
+  },
+  {
+    "id": "review-sheet",
+    "title": "投稿添削シート",
+    "icon": "✍️",
+    "category": "添削",
+    "description": "9期生強化チームの投稿添削依頼・フィードバック記録",
+    "url": "https://docs.google.com/spreadsheets/d/1yHKC3WosudYIUCPnIxbI6DYXHrrwvjnAJrBV1KAVgzU/edit?usp=sharing"
+  },
+  {
+    "id": "competitor-sheet",
+    "title": "競合分析シート",
+    "icon": "🔍",
+    "category": "分析",
+    "description": "競合アカウントのリサーチ・分析結果の共有",
+    "url": "https://docs.google.com/spreadsheets/d/1HfEvZyMXBRifgvP2oX_2y46IlOb9gUqTLrqssTGIijY/edit?usp=sharing"
+  }
+]

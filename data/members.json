@@ -1,0 +1,18 @@
+[
+  {
+    "id": "member-1",
+    "name": "しゅうへい",
+    "role": "リーダー / 運用管理",
+    "image": "assets/images/shuhei.png",
+    "instagram": "https://instagram.com/",
+    "profile": "9期生強化チームのポータルサイト運用およびデータ管理を担当。"
+  },
+  {
+    "id": "member-2",
+    "name": "きょん姐",
+    "role": "メンバー",
+    "image": "assets/images/kyon.png",
+    "instagram": "https://instagram.com/",
+    "profile": "9期生強化チームメンバー。"
+  }
+]

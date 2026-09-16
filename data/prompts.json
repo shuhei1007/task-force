@@ -1,0 +1,37 @@
+[
+  {
+    "id": "prompt-script",
+    "title": "台本作成プロンプト",
+    "icon": "📝",
+    "updated": "2026-08-25",
+    "description": "リール台本・キャプション・ハッシュタグ・テロップ・アフレコをセットで生成するプロンプト"
+  },
+  {
+    "id": "prompt-idea",
+    "title": "ネタ出しプロンプト",
+    "icon": "💡",
+    "updated": "2026-08-25",
+    "description": "競合分析・自己分析・コンセプトから30個のリール企画をグループ別に出力するプロンプト"
+  },
+  {
+    "id": "prompt-competitor",
+    "title": "競合分析プロンプト",
+    "icon": "🔍",
+    "updated": "2026-08-25",
+    "description": "1本のリールの文字起こし＆分析、および複数リールの比較分析を行うプロンプト"
+  },
+  {
+    "id": "prompt-pdca",
+    "title": "PDCA分析プロンプト",
+    "icon": "🔄",
+    "updated": "2026-08-25",
+    "description": "投稿数値を分析し、仮説立て・KPI設定・改善策提案を対話形式で進めるプロンプト"
+  },
+  {
+    "id": "prompt-thumbnail",
+    "title": "サムネイル作成指示プロンプト",
+    "icon": "🖼️",
+    "updated": "2026-08-25",
+    "description": "ChatGPT/Claude等にサムネイルデザインの構成指示・コピーを生成させるプロンプト"
+  }
+]
