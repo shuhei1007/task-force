@@ -72,3 +72,207 @@
 .badge-green-dark   { background: #f0fdf4 !important; color: #15803d !important; }
 .badge-pink-light   { background: #fdf2f8 !important; color: #be185d !important; }
 .badge-red-dark     { background: #fef2f2 !important; color: #b91c1c !important; }
+
+/* 検索・絞り込み */
+.knowledge-tools {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(54, 86, 74, 0.09);
+    border-radius: 16px;
+    box-shadow: 0 7px 24px rgba(44, 76, 59, 0.06);
+    margin-bottom: 36px;
+    padding: 22px;
+}
+
+.knowledge-search-wrap {
+    align-items: center;
+    background: #f7faf8;
+    border: 1px solid #dce6e0;
+    border-radius: 12px;
+    color: #6f8278;
+    display: flex;
+    gap: 10px;
+    padding: 0 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.knowledge-search-wrap:focus-within {
+    border-color: #6b8e7d;
+    box-shadow: 0 0 0 3px rgba(54, 86, 74, 0.1);
+}
+
+.knowledge-search-wrap input {
+    background: transparent;
+    border: 0;
+    color: #273b32;
+    flex: 1;
+    font: inherit;
+    font-size: 1rem;
+    min-width: 0;
+    outline: 0;
+    padding: 13px 0;
+}
+
+.knowledge-search-wrap input::placeholder {
+    color: #93a19a;
+}
+
+.search-clear {
+    align-items: center;
+    background: #e4ebe7;
+    border: 0;
+    border-radius: 50%;
+    color: #496255;
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem;
+    height: 26px;
+    justify-content: center;
+    width: 26px;
+}
+
+.knowledge-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.knowledge-filter {
+    background: #f4f7f5;
+    border: 1px solid #dce6e0;
+    border-radius: 999px;
+    color: #4e6559;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.86rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.knowledge-filter:hover {
+    border-color: #7e9b8d;
+    transform: translateY(-1px);
+}
+
+.knowledge-filter.active {
+    background: #36564a;
+    border-color: #36564a;
+    color: #fff;
+}
+
+.knowledge-filter.favorite-filter.active {
+    background: #9a6a16;
+    border-color: #9a6a16;
+}
+
+.knowledge-result {
+    color: #718078;
+    font-size: 0.82rem;
+    margin-top: 14px;
+}
+
+.knowledge-empty {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 14px;
+    color: #637168;
+    margin-bottom: 36px;
+    padding: 34px 20px;
+    text-align: center;
+}
+
+.knowledge-empty button {
+    background: transparent;
+    border: 1px solid #799185;
+    border-radius: 999px;
+    color: #36564a;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    margin-top: 14px;
+    padding: 8px 16px;
+}
+
+.favorite-button {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #dce5df;
+    border-radius: 50%;
+    color: #84938b;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.25rem;
+    height: 36px;
+    justify-content: center;
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s, transform 0.2s;
+    width: 36px;
+    z-index: 2;
+}
+
+.favorite-button:hover {
+    border-color: #c7932e;
+    color: #a56f0a;
+    transform: scale(1.07);
+}
+
+.favorite-button.active {
+    background: #fff8df;
+    border-color: #e1bd62;
+    color: #b47a0d;
+}
+
+.card .category {
+    align-self: flex-start;
+    max-width: calc(100% - 40px);
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.card[hidden],
+.grid[hidden],
+.section-heading[hidden],
+.chapter-title[hidden],
+.knowledge-empty[hidden],
+.search-clear[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .knowledge-tools {
+        margin-bottom: 28px;
+        padding: 14px;
+    }
+
+    .knowledge-search-wrap input {
+        font-size: 0.9rem;
+    }
+
+    .knowledge-filters {
+        flex-wrap: nowrap;
+        margin-left: -14px;
+        margin-right: -14px;
+        overflow-x: auto;
+        padding: 0 14px 5px;
+        scrollbar-width: thin;
+    }
+
+    .knowledge-filter {
+        flex: 0 0 auto;
+    }
+
+    .favorite-button {
+        right: 9px;
+        top: 9px;
+    }
+}

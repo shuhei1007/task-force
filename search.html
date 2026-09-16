@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/images/強化チームロゴ.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ノウハウ、プロンプト、ラジオ、ライブ、メンバーを横断検索します。">
+    <title>サイト内検索 | Instagram Circle Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=2026091602">
+    <link rel="stylesheet" href="css/search.css?v=2026091602">
+</head>
+
+<body>
+    <header class="topbar">
+        <button class="menu-toggle" id="menu-toggle" aria-label="メニューを開く">
+            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <a href="index.html" class="logo"><img src="assets/images/強化チームロゴ.png" alt="強化チームロゴ" width="120" height="80"></a>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <nav class="menu" aria-label="サイトメニュー">
+            <button class="accordion-btn"><span>メインメニュー</span><svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+            <div class="accordion-content">
+                <a href="news.html" class="menu-item" data-page="news">ホーム</a>
+                <a href="search.html" class="menu-item" data-page="search">サイト内検索</a>
+                <a href="knowledge.html" class="menu-item" data-page="knowledge">ノウハウ一覧</a>
+                <a href="members.html" class="menu-item" data-page="members">メンバー一覧</a>
+                <a href="prompts.html" class="menu-item" data-page="prompts">プロンプト集</a>
+                <a href="radio.html" class="menu-item" data-page="radio">ラジオ集</a>
+                <a href="live.html" class="menu-item" data-page="live">ライブ集</a>
+            </div>
+            <button class="accordion-btn"><span>その他</span><svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+            <div class="accordion-content">
+                <a href="resources.html" class="menu-item" data-page="resources">リソース</a>
+                <a href="schedule.html" class="menu-item" data-page="schedule">スケジュール</a>
+                <a href="links.html" class="menu-item" data-page="links">関連リンク</a>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="app">
+        <div class="page-container search-page">
+            <header class="search-hero">
+                <p class="section-kicker">SITE SEARCH</p>
+                <h1>サイト内検索</h1>
+                <p>ノウハウ、プロンプト、ラジオ、ライブ、メンバーをまとめて検索できます。</p>
+                <div class="site-search-box">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+                    <label class="visually-hidden" for="site-search-input">検索キーワード</label>
+                    <input type="search" id="site-search-input" placeholder="例：リール、競合分析、マネタイズ" autocomplete="off">
+                    <button type="button" id="site-search-clear" aria-label="検索語をクリア" hidden>×</button>
+                </div>
+            </header>
+
+            <div class="site-search-filters" role="group" aria-label="検索対象を絞り込み">
+                <button type="button" class="site-search-filter active" data-type="all" aria-pressed="true">すべて</button>
+                <button type="button" class="site-search-filter" data-type="knowledge" aria-pressed="false">ノウハウ</button>
+                <button type="button" class="site-search-filter" data-type="prompt" aria-pressed="false">プロンプト</button>
+                <button type="button" class="site-search-filter" data-type="radio" aria-pressed="false">ラジオ</button>
+                <button type="button" class="site-search-filter" data-type="live" aria-pressed="false">ライブ</button>
+                <button type="button" class="site-search-filter" data-type="member" aria-pressed="false">メンバー</button>
+            </div>
+
+            <div class="search-status-row">
+                <p id="site-search-status" aria-live="polite">検索データを読み込んでいます…</p>
+            </div>
+            <div class="site-search-results" id="site-search-results"></div>
+            <div class="site-search-empty" id="site-search-empty" hidden>
+                <span aria-hidden="true">🔎</span>
+                <h2>該当する情報が見つかりませんでした</h2>
+                <p>言葉を短くするか、別のキーワードで試してください。</p>
+            </div>
+        </div>
+    </main>
+
+    <script defer src="js/theme.js"></script>
+    <script defer src="js/main.js?v=2026091602"></script>
+    <script defer src="js/search.js?v=2026091602"></script>
+</body>
+</html>

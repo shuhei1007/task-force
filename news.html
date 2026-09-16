@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css?v=1787305000011">
+    <link rel="stylesheet" href="css/style.css?v=2026091602">
+    <link rel="stylesheet" href="css/dashboard.css?v=2026091602">
 </head>
 
 <body>
@@ -73,49 +74,83 @@
 
     <!-- メインコンテンツ -->
     <main class="main-content" id="app">
-        <div class="page-container gs-reveal">
-            <h1>お知らせ</h1>
+        <div class="page-container dashboard-page gs-reveal">
+            <header class="dashboard-welcome">
+                <div>
+                    <p class="section-kicker">TEAM DASHBOARD</p>
+                    <h1>ホーム</h1>
+                    <p>今日必要な予定・更新情報・資料を、ここからすぐ確認できます。</p>
+                </div>
+                <a href="search.html" class="dashboard-search-link">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+                    サイト内を検索
+                </a>
+            </header>
 
-            <ul class="news-list">
-                <li class="news-item gs-item">
-                    <a href="#">
-                        <div class="news-meta">
-                            <time datetime="2026-08-20">2026.08.21</time>
-                            <span class="badge badge-update">UPDATE</span>
-                        </div>
-                        <h2 class="news-title">ノウハウ一覧を更新しました</h2>
-                    </a>
-                </li>
-                <li class="news-item gs-item">
-                    <a href="#">
-                        <div class="news-meta">
-                            <time datetime="2026-08-20">2026.08.20</time>
-                            <span class="badge badge-update">UPDATE</span>
-                        </div>
-                        <h2 class="news-title">お知らせを更新しました</h2>
-                    </a>
-                </li>
-                <li class="news-item gs-item">
-                    <a href="#">
-                        <div class="news-meta">
-                            <time datetime="2026-08-15">2026.09.12</time>
-                            <span class="badge badge-event">EVENT</span>
-                        </div>
-                        <h2 class="news-title">名古屋オフ会</h2>
-                    </a>
-                </li>
-                <li class="news-item gs-item">
-                    <a href="#">
-                        <div class="news-meta">
-                            <time datetime="2026-08-01">2026.08.20</time>
-                            <span class="badge badge-info">INFO</span>
-                        </div>
-                        <h2 class="news-title">サークルメンバー専用のポータルサイトを開設しました！</h2>
-                    </a>
-                </li>
-            </ul>
+            <section class="dashboard-overview" aria-label="予定と今月の目標">
+                <article class="dashboard-panel next-event-panel">
+                    <div class="dashboard-panel-heading">
+                        <div><p class="section-kicker">NEXT SCHEDULE</p><h2>次回の予定</h2></div>
+                        <a href="schedule.html">予定を見る →</a>
+                    </div>
+                    <div id="next-event" class="next-event-content" aria-live="polite">
+                        <p>次回予定を確認しています…</p>
+                    </div>
+                </article>
+
+                <article class="dashboard-panel monthly-focus-panel">
+                    <div class="dashboard-panel-heading"><div><p class="section-kicker">SEPTEMBER</p><h2>今月の目標・担当</h2></div></div>
+                    <dl class="monthly-focus-list">
+                        <div><dt>今月の行動目標</dt><dd>トレンドシェア</dd></div>
+                        <div><dt>今週の担当</dt><dd class="unregistered">未登録</dd></div>
+                    </dl>
+                    <p class="dashboard-note">担当情報は確定後に掲載します。現在は各チーム資料をご確認ください。</p>
+                    <a class="dashboard-text-link" href="resources.html">強化チーム資料を開く →</a>
+                </article>
+            </section>
+
+            <section class="dashboard-section" aria-labelledby="latest-news-title">
+                <div class="dashboard-section-heading">
+                    <div><p class="section-kicker">NEWS</p><h2 id="latest-news-title">最新のお知らせ</h2></div>
+                </div>
+                <ul class="news-list dashboard-news-list">
+                    <li class="news-item"><a href="live_meetup_2026_09_nagoya.html" class="news-link"><div class="news-meta"><time datetime="2026-09-12">2026.09.12</time><span class="badge badge-event">EVENT</span></div><h3 class="news-title">名古屋オフ会</h3></a></li>
+                    <li class="news-item"><a href="knowledge.html" class="news-link"><div class="news-meta"><time datetime="2026-08-21">2026.08.21</time><span class="badge badge-update">UPDATE</span></div><h3 class="news-title">ノウハウ一覧を更新しました</h3></a></li>
+                    <li class="news-item"><div class="news-static"><div class="news-meta"><time datetime="2026-08-20">2026.08.20</time><span class="badge badge-update">UPDATE</span></div><h3 class="news-title">お知らせを更新しました</h3></div></li>
+                </ul>
+            </section>
+
+            <section class="dashboard-section recent-knowledge" aria-labelledby="recent-knowledge-title">
+                <div class="dashboard-section-heading">
+                    <div><p class="section-kicker">LATEST KNOWLEDGE</p><h2 id="recent-knowledge-title">最近追加されたノウハウ</h2></div>
+                    <a href="knowledge.html">一覧を見る →</a>
+                </div>
+                <div class="recent-knowledge-grid">
+                    <article class="recent-knowledge-card"><div class="knowledge-update-meta"><span class="new-label">NEW</span><time datetime="2026-09-16">9月16日追加</time></div><span class="category badge-custom badge-red">YouTube</span><h3>Instagram副業で稼げる人と稼げない人の決定的な5つの違い</h3><a href="guides/youtube-reels-5tips.html">詳しく見る →</a></article>
+                    <article class="recent-knowledge-card"><div class="knowledge-update-meta"><span class="new-label">NEW</span><time datetime="2026-09-07">9月7日更新</time></div><span class="category badge-custom badge-purple">世界観</span><h3>世界観の構築と運用</h3><a href="guides/worldview-guide.html">詳しく見る →</a></article>
+                    <article class="recent-knowledge-card"><div class="knowledge-update-meta"><span class="new-label">NEW</span><time datetime="2026-09-07">9月7日追加</time></div><span class="category badge-custom badge-indigo">ツール・自動化</span><h3>コメント→DM自動化（コメントオートメーション）</h3><a href="guides/comment-dm-automation.html">詳しく見る →</a></article>
+                </div>
+            </section>
+
+            <div class="dashboard-lower-grid">
+                <section class="dashboard-panel quick-links-panel" aria-labelledby="quick-links-title">
+                    <div class="dashboard-panel-heading"><div><p class="section-kicker">QUICK LINKS</p><h2 id="quick-links-title">よく使う資料</h2></div><a href="resources.html">すべて見る →</a></div>
+                    <div class="dashboard-link-list">
+                        <a href="https://docs.google.com/spreadsheets/d/1lTXk_OujITKDel_6G0kz0kI6F76fScWW2lA50AP68Bo/edit?usp=sharing" target="_blank" rel="noopener noreferrer"><span>📊</span><div><strong>1ヶ月振替会シート</strong><small>月次振り返り・個人目標</small></div><b>↗</b></a>
+                        <a href="https://docs.google.com/spreadsheets/d/1yHKC3WosudYIUCPnIxbI6DYXHrrwvjnAJrBV1KAVgzU/edit?usp=sharing" target="_blank" rel="noopener noreferrer"><span>✍️</span><div><strong>投稿添削シート</strong><small>9期生強化チーム</small></div><b>↗</b></a>
+                        <a href="https://docs.google.com/spreadsheets/d/1HfEvZyMXBRifgvP2oX_2y46IlOb9gUqTLrqssTGIijY/edit?usp=sharing" target="_blank" rel="noopener noreferrer"><span>🔍</span><div><strong>競合分析シート</strong><small>分析結果の共有</small></div><b>↗</b></a>
+                    </div>
+                </section>
+
+                <section class="dashboard-panel prompt-panel" aria-labelledby="new-prompts-title">
+                    <div class="dashboard-panel-heading"><div><p class="section-kicker">PROMPTS</p><h2 id="new-prompts-title">新しいプロンプト</h2></div><a href="prompts.html">一覧を見る →</a></div>
+                    <div class="dashboard-prompt-list">
+                        <a href="prompts.html#prompt-thumbnail"><span class="dashboard-item-icon">🖼️</span><div><strong>サムネイル作成指示プロンプト</strong><small>8月25日追加</small></div><span>→</span></a>
+                        <a href="prompts.html#prompt-pdca"><span class="dashboard-item-icon">🔄</span><div><strong>PDCA分析プロンプト</strong><small>8月25日更新</small></div><span>→</span></a>
+                    </div>
+                </section>
+            </div>
         </div>
-
     </main>
 
     <!-- Animation & ScrollTrigger Libraries -->
@@ -124,7 +159,8 @@
 
     <!-- Custom JS -->
     <script defer src="js/theme.js"></script>
-    <script defer src="js/main.js"></script>
+    <script defer src="js/main.js?v=2026091602"></script>
+    <script defer src="js/dashboard.js?v=2026091602"></script>
 
 
 

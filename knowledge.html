@@ -14,8 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css?v=1787305000011">
-    <link rel="stylesheet" href="css/knowledge-cards.css">
+    <link rel="stylesheet" href="css/style.css?v=2026091602">
+    <link rel="stylesheet" href="css/knowledge-cards.css?v=2026091602">
 </head>
 
 <body>
@@ -75,6 +75,38 @@
         <div class="page-container gs-reveal">
             <h1>ノウハウ一覧</h1>
 
+            <section class="knowledge-tools" aria-label="ノウハウを検索・絞り込み">
+                <div class="knowledge-search-wrap">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-3.5-3.5"></path>
+                    </svg>
+                    <label class="visually-hidden" for="knowledge-search">キーワードで検索</label>
+                    <input type="search" id="knowledge-search" placeholder="タイトル・カテゴリ・内容から検索" autocomplete="off">
+                    <button type="button" class="search-clear" id="knowledge-search-clear" aria-label="検索語をクリア" hidden>×</button>
+                </div>
+                <div class="knowledge-filters" role="group" aria-label="レベル・種類で絞り込み">
+                    <button type="button" class="knowledge-filter active" data-filter="all" aria-pressed="true">すべて</button>
+                    <button type="button" class="knowledge-filter" data-filter="beginner" aria-pressed="false">初心者向け</button>
+                    <button type="button" class="knowledge-filter" data-filter="intermediate" aria-pressed="false">中級</button>
+                    <button type="button" class="knowledge-filter" data-filter="monetize" aria-pressed="false">マネタイズ</button>
+                    <button type="button" class="knowledge-filter" data-filter="tag:reel" aria-pressed="false">リール</button>
+                    <button type="button" class="knowledge-filter" data-filter="tag:feed" aria-pressed="false">フィード</button>
+                    <button type="button" class="knowledge-filter" data-filter="tag:competitor" aria-pressed="false">競合分析</button>
+                    <button type="button" class="knowledge-filter" data-filter="tag:account" aria-pressed="false">アカウント設計</button>
+                    <button type="button" class="knowledge-filter" data-filter="tag:shooting" aria-pressed="false">撮影</button>
+                    <button type="button" class="knowledge-filter" data-filter="tag:legal" aria-pressed="false">法律</button>
+                    <button type="button" class="knowledge-filter" data-filter="influencer" aria-pressed="false">外部対談</button>
+                    <button type="button" class="knowledge-filter" data-filter="info" aria-pressed="false">情報共有</button>
+                    <button type="button" class="knowledge-filter favorite-filter" data-filter="favorites" aria-pressed="false"><span aria-hidden="true">★</span> お気に入り</button>
+                </div>
+                <p class="knowledge-result" id="knowledge-result" aria-live="polite"></p>
+            </section>
+
+            <div class="knowledge-empty" id="knowledge-empty" hidden>
+                <p>条件に一致するノウハウがありません。</p>
+                <button type="button" id="knowledge-reset">検索条件をリセット</button>
+            </div>
 
             <h2 class="section-heading">
                 2026年の情報共有</h2>
@@ -466,7 +498,8 @@
 
     <!-- Custom JS -->
     <script defer src="js/theme.js"></script>
-    <script defer src="js/main.js"></script>
+    <script defer src="js/main.js?v=2026091602"></script>
+    <script defer src="js/knowledge.js?v=2026091602"></script>
 
 
 
