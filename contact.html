@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="assets/images/強化チームロゴ.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="インスタ部への連絡ページ。">
-    <title>のぞいてみる｜Instagram Circle Dashboard</title>
+    <meta name="description" content="ノウハウ追加、情報修正、リンク切れ、資料共有、サイト改善要望の受付ページ。">
+    <title>情報追加・修正依頼｜Instagram Circle Dashboard</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,24 +71,30 @@
     </aside>
 
     <!-- メインコンテンツ -->
-    <main class="main-content" id="app" aria-label="お問い合わせ">
+    <main class="main-content" id="app" aria-label="情報追加・修正依頼" data-google-form-url="">
         <div class="article-container gs-reveal">
             <header class="article-header">
-                <h1>のぞいてみる</h1>
-                <div class="article-meta">さいごまで見てくれて、ありがとう。</div>
+                <h1>情報追加・修正依頼</h1>
+                <div class="article-meta">サイトの情報更新や改善のご連絡はこちらから。</div>
             </header>
 
             <div class="article-content gs-item">
-                <section class="contact-section">
-                    <div class="contact-cloud one" aria-hidden="true">☁</div>
-                    <div class="contact-cloud two" aria-hidden="true">☁</div>
-                    <div class="contact-inner reveal">
-                        <h2>ちょっと気になるな、<br>くらいで大丈夫です。</h2>
-                        <span>いっしょに楽しいこと、考えませんか？</span>
-                        <button type="button" id="contactButton">気軽に声をかける <i aria-hidden="true">☺</i></button>
+                <section class="request-form-section" aria-labelledby="request-types-title">
+                    <div class="request-form-intro">
+                        <p class="section-kicker">REQUEST &amp; FEEDBACK</p>
+                        <h2 id="request-types-title">次の内容をGoogleフォームから送れます</h2>
+                        <p>該当する項目を選び、分かる範囲で内容をご記入ください。</p>
                     </div>
+                    <ul class="request-type-list">
+                        <li><span aria-hidden="true">＋</span><div><strong>ノウハウ追加依頼</strong><small>掲載してほしいテーマや記事</small></div></li>
+                        <li><span aria-hidden="true">✎</span><div><strong>メンバー情報の修正</strong><small>プロフィールやリンクの変更</small></div></li>
+                        <li><span aria-hidden="true">↗</span><div><strong>リンク切れ報告</strong><small>開けないページや資料</small></div></li>
+                        <li><span aria-hidden="true">▤</span><div><strong>新しい資料の共有</strong><small>チームで共有したい資料</small></div></li>
+                        <li><span aria-hidden="true">♡</span><div><strong>サイト改善要望</strong><small>使いづらい点や新機能の提案</small></div></li>
+                    </ul>
+                    <a id="request-form-link" class="request-form-button is-disabled" href="#" aria-disabled="true">Googleフォームを開く <span aria-hidden="true">↗</span></a>
+                    <p class="request-form-note" id="request-form-note">Googleフォームの共有URLを設定すると利用できます。</p>
                 </section>
-                <div id="toast" role="status" aria-live="polite"></div>
             </div>
         </div>
     </main>

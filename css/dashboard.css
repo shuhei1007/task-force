@@ -80,6 +80,9 @@
 .next-event-date span { font-size: .82rem; }
 .next-event-details h3 { font-size: 1.2rem; margin-bottom: 7px; }
 .next-event-details p { color: rgba(255,255,255,.82); font-size: .88rem; }
+.next-event-details { flex: 1; min-width: 0; }
+.recently-viewed-empty { color: #718078; font-size: .88rem; grid-column: 1 / -1; padding: 10px 2px; }
+.recently-viewed-card .read-status-badge { align-self: flex-start; margin-bottom: 10px; }
 
 .monthly-focus-list { display: grid; gap: 10px; }
 .monthly-focus-list > div { background: #f5f8f6; border-radius: 11px; padding: 12px 14px; }

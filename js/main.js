@@ -1,3 +1,54 @@
+const ICIRCLE_EVENTS = [
+    { date: '2026-09-18', title: 'あつくん質問ライブ', detail: 'テーマ：アカウント設計' },
+    { date: '2026-09-21', title: 'えれな添削ライブ', detail: '添削ライブ' },
+    { date: '2026-09-22', title: 'いつき質問ライブ', detail: 'oVice開催' },
+    { date: '2026-09-24', title: 'りこぴん めざ5道場', detail: 'オンライン開催' },
+    { date: '2026-09-25', title: 'コミュニティライブ', detail: '文化祭・最新情報を公開' },
+    { date: '2026-09-26', title: '年払い限定 ZOOM交流会', detail: 'オンライン交流会' },
+    { date: '2026-09-28', title: 'あつくん添削ライブ', detail: '添削ライブ' },
+    { date: '2026-09-29', title: 'りこぴん質問ライブ', detail: 'テーマ：投稿' }
+];
+
+window.ICIRCLE_EVENTS = ICIRCLE_EVENTS;
+window.ICircleCalendar = {
+    googleUrl(event) {
+        const start = event.date.replaceAll('-', '');
+        const endDate = new Date(`${event.date}T00:00:00`);
+        endDate.setDate(endDate.getDate() + 1);
+        const end = `${endDate.getFullYear()}${String(endDate.getMonth() + 1).padStart(2, '0')}${String(endDate.getDate()).padStart(2, '0')}`;
+        const params = new URLSearchParams({
+            action: 'TEMPLATE',
+            text: event.title,
+            dates: `${start}/${end}`,
+            details: `${event.detail}\n9期生強化チームポータルサイトから追加`
+        });
+        return `https://calendar.google.com/calendar/render?${params}`;
+    },
+    downloadIcs(event) {
+        const escapeIcs = (value) => value.replaceAll('\\', '\\\\').replaceAll('\n', '\\n').replaceAll(',', '\\,').replaceAll(';', '\\;');
+        const start = event.date.replaceAll('-', '');
+        const endDate = new Date(`${event.date}T00:00:00`);
+        endDate.setDate(endDate.getDate() + 1);
+        const end = `${endDate.getFullYear()}${String(endDate.getMonth() + 1).padStart(2, '0')}${String(endDate.getDate()).padStart(2, '0')}`;
+        const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+        const content = [
+            'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//InstaCircle//Portal//JA',
+            'BEGIN:VEVENT', `UID:${event.date}-${encodeURIComponent(event.title)}@icircle-portal`,
+            `DTSTAMP:${stamp}`, `DTSTART;VALUE=DATE:${start}`, `DTEND;VALUE=DATE:${end}`,
+            `SUMMARY:${escapeIcs(event.title)}`, `DESCRIPTION:${escapeIcs(event.detail)}`,
+            'END:VEVENT', 'END:VCALENDAR'
+        ].join('\r\n');
+        const blobUrl = URL.createObjectURL(new Blob([content], { type: 'text/calendar;charset=utf-8' }));
+        const link = document.createElement('a');
+        link.href = blobUrl;
+        link.download = `${event.date}-${event.title.replace(/[\\/:*?"<>|]/g, '-')}.ics`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+    }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
     // 外部ライブラリの読み込みに失敗しても、ナビゲーションなどは動作させる
     if (window.gsap && window.ScrollTrigger) {
@@ -8,6 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initCarousel();
     initScheduleMonthTabs();
     initContentUpdates();
+    initKnowledgeReading();
+    initScheduleCalendar();
+    initRequestForm();
     animatePageContent();
 
     // Splash Screen Animation
@@ -169,6 +223,172 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentPage === 'prompts.html') initPromptFavorites();
     }
 
+    function initKnowledgeReading() {
+        const article = document.querySelector('.article-content');
+        const articleHeader = document.querySelector('.article-header');
+        if (!article || !articleHeader) return;
+
+        const pathParts = window.location.pathname.split('/').filter(Boolean);
+        const fileName = pathParts.at(-1) || '';
+        const isGuide = pathParts.lastIndexOf('guides') >= 0;
+        const isKnowledgeInfo = /^info_\d{4}_\d{2}\.html$/.test(fileName);
+        if (!isGuide && !isKnowledgeInfo) return;
+
+        const storageUrl = isGuide ? `guides/${fileName}` : fileName;
+        const title = articleHeader.querySelector('h1')?.textContent.trim() || document.title;
+        const historyKey = 'icircle-knowledge-history';
+        const readKey = 'icircle-knowledge-read';
+        const readArray = (key) => {
+            try {
+                const value = JSON.parse(localStorage.getItem(key) || '[]');
+                return Array.isArray(value) ? value : [];
+            } catch (_error) {
+                return [];
+            }
+        };
+        const readItems = new Set(readArray(readKey));
+
+        const historyItems = readArray(historyKey).filter((item) => item && item.url !== storageUrl);
+        historyItems.unshift({ url: storageUrl, title, visitedAt: new Date().toISOString() });
+        try { localStorage.setItem(historyKey, JSON.stringify(historyItems.slice(0, 20))); } catch (_error) {}
+
+        const statusBar = document.createElement('div');
+        statusBar.className = 'reading-status-bar';
+        const status = document.createElement('span');
+        status.className = 'read-status-badge';
+        status.setAttribute('role', 'status');
+        const toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'reading-status-toggle';
+        statusBar.append(status, toggle);
+        articleHeader.insertAdjacentElement('afterend', statusBar);
+
+        function updateStatus() {
+            const isRead = readItems.has(storageUrl);
+            status.textContent = isRead ? '✓ 読了済み' : '未読';
+            status.classList.toggle('is-read', isRead);
+            toggle.textContent = isRead ? '未読に戻す' : '読了済みにする';
+            toggle.setAttribute('aria-label', `「${title}」を${isRead ? '未読に戻す' : '読了済みにする'}`);
+        }
+
+        function saveRead(isRead) {
+            if (isRead) readItems.add(storageUrl);
+            else readItems.delete(storageUrl);
+            try { localStorage.setItem(readKey, JSON.stringify([...readItems])); } catch (_error) {}
+            updateStatus();
+        }
+
+        toggle.addEventListener('click', () => saveRead(!readItems.has(storageUrl)));
+        updateStatus();
+
+        const headings = Array.from(article.querySelectorAll('h2')).filter((heading) => {
+            return !heading.closest('.article-toc') && heading.textContent.trim();
+        });
+        if (headings.length >= 2) {
+            const toc = document.createElement('nav');
+            toc.className = 'article-toc';
+            toc.setAttribute('aria-label', 'この記事の目次');
+            const details = document.createElement('details');
+            details.open = true;
+            const summary = document.createElement('summary');
+            summary.innerHTML = '<span>目次</span><small>項目を押すと移動します</small>';
+            const list = document.createElement('ol');
+
+            headings.forEach((heading, index) => {
+                if (!heading.id) heading.id = `section-${index + 1}`;
+                heading.classList.add('article-anchor-heading');
+                const item = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = `#${heading.id}`;
+                link.textContent = heading.textContent.trim();
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const parentDetails = heading.closest('details');
+                    if (parentDetails) parentDetails.open = true;
+                    history.replaceState(null, '', `#${heading.id}`);
+                    heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+                item.appendChild(link);
+                list.appendChild(item);
+            });
+            details.append(summary, list);
+            toc.appendChild(details);
+            statusBar.insertAdjacentElement('afterend', toc);
+        }
+
+        const sentinel = document.createElement('div');
+        sentinel.className = 'reading-complete-sentinel';
+        sentinel.setAttribute('aria-hidden', 'true');
+        article.appendChild(sentinel);
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    saveRead(true);
+                    observer.disconnect();
+                }
+            }, { threshold: 1 });
+            observer.observe(sentinel);
+        }
+    }
+
+    function createCalendarActions(event) {
+        const google = document.createElement('a');
+        google.className = 'calendar-button calendar-button-google';
+        google.href = window.ICircleCalendar.googleUrl(event);
+        google.target = '_blank';
+        google.rel = 'noopener noreferrer';
+        google.textContent = 'Googleカレンダーに追加';
+        const device = document.createElement('button');
+        device.type = 'button';
+        device.className = 'calendar-button';
+        device.textContent = '端末のカレンダーに追加';
+        device.addEventListener('click', () => window.ICircleCalendar.downloadIcs(event));
+        return [google, device];
+    }
+
+    function initScheduleCalendar() {
+        const body = document.querySelector('.schedule-table tbody');
+        if (!body) return;
+        const weekdays = ['日', '月', '火', '水', '木', '金', '土'];
+        ICIRCLE_EVENTS.forEach((event) => {
+            const date = new Date(`${event.date}T00:00:00`);
+            const row = document.createElement('tr');
+            const dateCell = document.createElement('td');
+            dateCell.className = 'date-cell';
+            dateCell.textContent = `${date.getMonth() + 1}月${date.getDate()}日（${weekdays[date.getDay()]}）`;
+            const detailCell = document.createElement('td');
+            const title = document.createElement('strong');
+            title.textContent = event.title;
+            const detail = document.createElement('small');
+            detail.textContent = event.detail;
+            detailCell.append(title, detail);
+            const actionCell = document.createElement('td');
+            actionCell.className = 'calendar-actions-cell';
+            actionCell.append(...createCalendarActions(event));
+            row.append(dateCell, detailCell, actionCell);
+            body.appendChild(row);
+        });
+    }
+
+    function initRequestForm() {
+        const requestPage = document.querySelector('[data-google-form-url]');
+        if (!requestPage) return;
+        const formUrl = requestPage.dataset.googleFormUrl?.trim();
+        const link = document.getElementById('request-form-link');
+        const note = document.getElementById('request-form-note');
+        if (!link) return;
+        if (formUrl) {
+            link.href = formUrl;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.removeAttribute('aria-disabled');
+            link.classList.remove('is-disabled');
+            if (note) note.textContent = 'フォームは別タブで開きます。';
+        } else {
+            link.addEventListener('click', (event) => event.preventDefault());
+        }
+    }
+
     function initPromptFavorites() {
         const storageKey = 'icircle-prompt-favorites';
         let favorites;
@@ -308,6 +528,16 @@ document.addEventListener('DOMContentLoaded', () => {
         searchMenuItem.dataset.page = 'search';
         searchMenuItem.textContent = 'サイト内検索';
         firstMenuGroup.querySelector('a[href="news.html"]')?.insertAdjacentElement('afterend', searchMenuItem);
+    }
+    const menuGroups = document.querySelectorAll('.menu .accordion-content');
+    const otherMenuGroup = menuGroups.length > 1 ? menuGroups[1] : null;
+    if (otherMenuGroup && !otherMenuGroup.querySelector('[data-page="contact"]')) {
+        const requestLink = document.createElement('a');
+        requestLink.href = window.location.pathname.includes('/guides/') ? '../contact.html' : 'contact.html';
+        requestLink.className = 'menu-item';
+        requestLink.dataset.page = 'contact';
+        requestLink.textContent = '情報追加・修正依頼';
+        otherMenuGroup.appendChild(requestLink);
     }
     const menuItems = document.querySelectorAll('.menu-item');
     menuItems.forEach(item => {

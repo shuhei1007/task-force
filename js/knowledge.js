@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const result = document.getElementById('knowledge-result');
     const empty = document.getElementById('knowledge-empty');
     const favoriteStorageKey = 'icircle-knowledge-favorites';
+    const readStorageKey = 'icircle-knowledge-read';
     const today = new Date();
 
     const updateDates = {
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let activeFilter = 'all';
     let favorites = readFavorites();
+    let readItems = readReadItems();
 
     function readFavorites() {
         try {
@@ -41,6 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem(favoriteStorageKey, JSON.stringify(Array.from(favorites)));
         } catch (_error) {
             // プライベートブラウズ等で保存できなくても、その場では操作を継続する
+        }
+    }
+
+    function readReadItems() {
+        try {
+            const saved = JSON.parse(localStorage.getItem(readStorageKey) || '[]');
+            return new Set(Array.isArray(saved) ? saved : []);
+        } catch (_error) {
+            return new Set();
         }
     }
 
@@ -112,6 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
         meta.innerHTML = `${isNew(updated) ? '<span class="new-label">NEW</span>' : ''}<time datetime="${updated}">${Number(month)}月${Number(day)}日${action}</time>`;
         content.insertBefore(meta, link);
 
+        const readStatus = document.createElement('span');
+        readStatus.className = 'read-status-badge knowledge-read-status';
+        readStatus.dataset.href = href;
+        meta.appendChild(readStatus);
+
         favoriteButton.addEventListener('click', () => {
             if (favorites.has(href)) favorites.delete(href);
             else favorites.add(href);
@@ -131,6 +147,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? `「${title}」をお気に入りから削除`
                 : `「${title}」をお気に入りに追加`);
             button.querySelector('span').textContent = selected ? '★' : '☆';
+        });
+    }
+
+    function updateReadStatuses() {
+        readItems = readReadItems();
+        document.querySelectorAll('.knowledge-read-status').forEach((badge) => {
+            const isRead = readItems.has(badge.dataset.href);
+            badge.textContent = isRead ? '✓ 読了済み' : '未読';
+            badge.classList.toggle('is-read', isRead);
         });
     }
 
@@ -211,5 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateFavoriteButtons();
+    updateReadStatuses();
     applyFilters();
+    window.addEventListener('pageshow', updateReadStatuses);
+    window.addEventListener('storage', updateReadStatuses);
 });
