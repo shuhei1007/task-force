@@ -1,5 +1,15 @@
 [
   {
+    "id": "news-20260917-01",
+    "date": "2026-09-17",
+    "type": "LIVE",
+    "typeLabel": "LIVE",
+    "badgeClass": "badge-live",
+    "title": "【ライブ集】みこ姐共有「1年でFw20万人達成！バズるリール動画の作り方・分析術（みうさん）」を公開しました",
+    "url": "live_miko_miu_buzz_reels.html",
+    "isNew": true
+  },
+  {
     "id": "news-20260916-02",
     "date": "2026-09-16",
     "type": "UPDATE",
