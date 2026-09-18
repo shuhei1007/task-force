@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetButton = document.getElementById('knowledge-reset');
     const result = document.getElementById('knowledge-result');
     const empty = document.getElementById('knowledge-empty');
+    const favoriteFilterButton = document.querySelector('[data-filter="favorites"]');
     const favoriteStorageKey = 'icircle-knowledge-favorites';
     const readStorageKey = 'icircle-knowledge-read';
     const today = new Date();
@@ -129,11 +130,16 @@ document.addEventListener('DOMContentLoaded', () => {
         meta.appendChild(readStatus);
 
         favoriteButton.addEventListener('click', () => {
-            if (favorites.has(href)) favorites.delete(href);
-            else favorites.add(href);
+            const isAdding = !favorites.has(href);
+            if (isAdding) favorites.add(href);
+            else favorites.delete(href);
             saveFavorites();
             updateFavoriteButtons();
-            if (activeFilter === 'favorites') applyFilters();
+            if (isAdding) {
+                activateFilter('favorites', { updateHash: true, scroll: true });
+            } else if (activeFilter === 'favorites') {
+                applyFilters();
+            }
         });
     });
 
@@ -205,15 +211,29 @@ document.addEventListener('DOMContentLoaded', () => {
         updateSectionVisibility();
     }
 
+    function activateFilter(filter, { updateHash = false, scroll = false } = {}) {
+        activeFilter = filter;
+        filterButtons.forEach((button) => {
+            const selected = button.dataset.filter === filter;
+            button.classList.toggle('active', selected);
+            button.setAttribute('aria-pressed', String(selected));
+        });
+        applyFilters();
+
+        if (filter === 'favorites' && updateHash) {
+            history.replaceState(null, '', '#favorites');
+        } else if (filter !== 'favorites' && window.location.hash === '#favorites') {
+            history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+        }
+
+        if (scroll && favoriteFilterButton) {
+            favoriteFilterButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
     filterButtons.forEach((button) => {
         button.addEventListener('click', () => {
-            activeFilter = button.dataset.filter;
-            filterButtons.forEach((item) => {
-                const selected = item === button;
-                item.classList.toggle('active', selected);
-                item.setAttribute('aria-pressed', String(selected));
-            });
-            applyFilters();
+            activateFilter(button.dataset.filter, { updateHash: true });
         });
     });
 
@@ -225,19 +245,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     resetButton.addEventListener('click', () => {
         searchInput.value = '';
-        activeFilter = 'all';
-        filterButtons.forEach((button) => {
-            const selected = button.dataset.filter === 'all';
-            button.classList.toggle('active', selected);
-            button.setAttribute('aria-pressed', String(selected));
-        });
-        applyFilters();
+        activateFilter('all', { updateHash: true });
         searchInput.focus();
     });
 
+    if (window.location.hash === '#favorites') activeFilter = 'favorites';
     updateFavoriteButtons();
     updateReadStatuses();
-    applyFilters();
+    activateFilter(activeFilter);
     window.addEventListener('pageshow', updateReadStatuses);
     window.addEventListener('storage', updateReadStatuses);
 });

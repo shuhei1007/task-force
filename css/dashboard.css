@@ -95,6 +95,8 @@
 .dashboard-news-list .news-item:first-child { border-top: 1px solid #eee; }
 .dashboard-news-list .news-item a,
 .dashboard-news-list .news-item .news-static { padding-left: 4px; padding-right: 4px; }
+.dashboard-news-list .news-meta { width: 250px; }
+.dashboard-news-list .news-meta > * { flex-shrink: 0; }
 
 .dashboard-lower-grid { margin-top: 24px; }
 .dashboard-link-list,

@@ -104,7 +104,7 @@ async function initLatestNews() {
             const badgeClass = escapeHtml(item.badgeClass || 'badge-update');
             const typeLabel = escapeHtml(item.typeLabel || item.type || 'INFO');
             const title = escapeHtml(item.title);
-            const isNew = item.isNew ? '<span class="new-label" style="background:#ef4444; color:#fff; font-size:0.7rem; padding:2px 6px; border-radius:4px; margin-left:6px; font-weight:bold;">NEW</span>' : '';
+            const isNew = item.isNew ? '<span class="new-label">NEW</span>' : '';
 
             if (item.url) {
                 return `
