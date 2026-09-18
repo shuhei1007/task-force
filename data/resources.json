@@ -22,5 +22,13 @@
     "category": "分析",
     "description": "競合アカウントのリサーチ・分析結果の共有",
     "url": "https://docs.google.com/spreadsheets/d/1HfEvZyMXBRifgvP2oX_2y46IlOb9gUqTLrqssTGIijY/edit?usp=sharing"
+  },
+  {
+    "id": "instagram-analysis-sheet",
+    "title": "Instagram競合分析/自己分析シート",
+    "icon": "📈",
+    "category": "分析",
+    "description": "Instagram競合アカウント・自己アカウントの徹底分析スプレッドシート",
+    "url": "https://docs.google.com/spreadsheets/d/1dVEnd5GxmHiLZwk39XuWl9ab-SPrm35QGLK8kgY-oOo/edit?gid=0#gid=0"
   }
 ]

@@ -1,5 +1,15 @@
 [
   {
+    "id": "news-20260918-01",
+    "date": "2026-09-18",
+    "type": "RESOURCE",
+    "typeLabel": "RESOURCE",
+    "badgeClass": "badge-event",
+    "title": "【リソース追加】「Instagram競合分析/自己分析シート」を追加しました",
+    "url": "resources.html",
+    "isNew": true
+  },
+  {
     "id": "news-20260917-01",
     "date": "2026-09-17",
     "type": "LIVE",
