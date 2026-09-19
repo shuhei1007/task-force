@@ -17,11 +17,11 @@
   },
   {
     "id": "competitor-sheet",
-    "title": "競合分析シート",
+    "title": "強化チーム競合分析シート",
     "icon": "🔍",
     "category": "分析",
-    "description": "競合アカウントのリサーチ・分析結果の共有",
-    "url": "https://docs.google.com/spreadsheets/d/1HfEvZyMXBRifgvP2oX_2y46IlOb9gUqTLrqssTGIijY/edit?usp=sharing"
+    "description": "強化チーム用 競合アカウント分析シート（Google Spreadsheets）",
+    "url": "https://docs.google.com/spreadsheets/d/1_w0BX4ov2eqXxbYbAXNsrcCL1gTtT055JxN-am-stPQ/edit?gid=0#gid=0"
   },
   {
     "id": "instagram-analysis-sheet",
