@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-    <!-- cSpell:ignore InstaCircle -->
+    <!-- cSpell:ignore InstaCircle CTA -->
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="assets/images/強化チームロゴ.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css?v=1787305000011">
+    <link rel="stylesheet" href="css/style.css?v=2026091602">
 </head>
 
 <body>
@@ -47,11 +47,11 @@
             </button>
             <div class="accordion-content">
                 <a href="news.html" class="menu-item" data-page="news">お知らせ</a>
-                <a href="knowledge.html" class="menu-item" data-page="knowledge">ノウハウ一覧</a>
+                <a href="knowledge.html" class="menu-item active" data-page="knowledge">ノウハウ一覧</a>
                 <a href="members.html" class="menu-item" data-page="members">メンバー一覧</a>
                 <a href="prompts.html" class="menu-item" data-page="prompts">プロンプト集</a>
                 <a href="radio.html" class="menu-item" data-page="radio">ラジオ集</a>
-                <a href="live.html" class="menu-item active" data-page="live">ライブ集</a>
+                <a href="live.html" class="menu-item" data-page="live">ライブ集</a>
             </div>
 
             <button class="accordion-btn">
@@ -72,34 +72,118 @@
     <!-- メインコンテンツ -->
     <main class="main-content" id="app">
         <div class="article-container gs-reveal">
-            <a href="live.html" class="back-link">← ライブ集に戻る</a>
+            <a href="knowledge.html" class="back-link">← ノウハウ一覧に戻る</a>
 
             <header class="article-header">
-                <h1>2026年9月の情報共有まとめ</h1>
-                <div class="article-meta">更新日: 2026年9月末日</div>
+                <div class="article-badge-wrap" style="margin-bottom: 8px;">
+                    <span class="category badge-custom badge-blue">情報共有</span>
+                    <span class="category badge-custom badge-green">インサイト分析</span>
+                </div>
+                <h1>2026年9月の情報共有：リール動画インサイト分析完全ガイド</h1>
+                <div class="article-meta">見るべき4つの重要指標と問題別3つの改善パターン ｜ 更新日: 2026年9月19日</div>
             </header>
 
             <div class="article-content gs-item">
-                <p>ここに2026年9月の情報共有の内容を記載します。以下の枠組みを自由に書き換えてお使いください。</p>
+                <div class="highlight-box highlight-box--key">
+                    <h2>💡 本講義の核心</h2>
+                    <p style="margin-bottom: 0;"><strong>「再生数の上下に一喜一憂しない！」</strong><br>
+                    投稿後24時間時点の4つの指標（スキップ率・維持率・保存率・フォロー転換率）を定点観測し、どこがボトルネックか（冒頭か、構成か、ネタか、CTAか）を特定して的確な改善を繰り返すことがバズとフォロワー増への最短ルートです。</p>
+                </div>
 
-                <h2>1. 今月のトレンドと傾向</h2>
-                <p>Instagramのアルゴリズム変更や、最近よく見かけるバズリールの傾向についてまとめます。長文になっても、ゆったりとした文字間隔で読みやすく表示されます。</p>
+                <h2>1. 見るべき4つの重要指標</h2>
+                <div style="display: grid; gap: 16px; margin: 20px 0;">
+                    
+                    <!-- 指標 1 -->
+                    <div style="background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid #ef4444; border-radius: 8px; padding: 18px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <h3 style="margin: 0; color: #b91c1c; font-size: 1.15rem;">① 3秒以内のスキップ率（第一印象）</h3>
+                            <span class="badge-custom badge-red" style="font-size: 0.8rem;">目標: 50%以下（バズ基準: 30%台）</span>
+                        </div>
+                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.95rem; color: #334155; line-height: 1.7;">
+                            <li><strong>意味：</strong>動画開始直後（0〜3秒）にスワイプして離脱された割合（低いほど良い）。</li>
+                            <li><strong>改善策：</strong>数値が高い場合は<strong>「冒頭の文字・映像（フック）」</strong>を見直す。0〜3秒のグラフが急激に落ち込まない演出・テロップの工夫が必要。</li>
+                        </ul>
+                    </div>
 
-                <div class="highlight-box">
-                    <h3>💡 今月の重要ポイント</h3>
+                    <!-- 指標 2 -->
+                    <div style="background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid #3b82f6; border-radius: 8px; padding: 18px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <h3 style="margin: 0; color: #1d4ed8; font-size: 1.15rem;">② 視聴維持率（話の面白さ・構成）</h3>
+                            <span class="badge-custom badge-blue" style="font-size: 0.8rem;">目標: 35%以上（バズ基準: 50〜60%）</span>
+                        </div>
+                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.95rem; color: #334155; line-height: 1.7;">
+                            <li><strong>意味：</strong>動画の長さに伴ってどれだけ離脱されずに最後まで見られたか（<code>平均再生時間 ÷ 動画の総尺</code>）。</li>
+                            <li><strong>改善策：</strong>途中で飽きられているサイン。間延びした無駄なカットの削除、テンポの向上、構成の見直しを行う。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 指標 3 -->
+                    <div style="background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid #10b981; border-radius: 8px; padding: 18px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <h3 style="margin: 0; color: #047857; font-size: 1.15rem;">③ 保存率（情報の有益性・実用性）</h3>
+                            <span class="badge-custom badge-green" style="font-size: 0.8rem;">目標: 1%以上（バズ基準: 3%以上）</span>
+                        </div>
+                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.95rem; color: #334155; line-height: 1.7;">
+                            <li><strong>意味：</strong>「後で見返したい」「役に立つ」と思われた割合（<code>保存数 ÷ リーチ数</code>）。</li>
+                            <li><strong>改善策：</strong>低い場合はネタ自体の需要や有益性が不足しているため、企画やテーマ選定を再検討する。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 指標 4 -->
+                    <div style="background: #fff; border: 1px solid #e2e8f0; border-left: 5px solid #8b5cf6; border-radius: 8px; padding: 18px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <h3 style="margin: 0; color: #6d28d9; font-size: 1.15rem;">④ フォロー転換率（アカウントへのファン化）</h3>
+                            <span class="badge-custom badge-purple" style="font-size: 0.8rem;">目安: 0.3〜0.5%（優秀: 1%以上）</span>
+                        </div>
+                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.95rem; color: #334155; line-height: 1.7;">
+                            <li><strong>意味：</strong>動画を見た人のうち実際にフォローにつながった割合（<code>フォロワー増加数 ÷ リーチ数 × 100</code>）。</li>
+                            <li><strong>改善策：</strong>動画最後の誘導（CTA）で「このアカウントをフォローするメリット・理由」を明確に伝える。</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <h2>2. 数字の組み合わせでわかる「3つの病名（改善パターン）」</h2>
+                <p>4つの指標のバランスを見ることで、アカウントの弱点と打つべき対策が明確になります。</p>
+
+                <div style="display: grid; gap: 16px; margin: 20px 0;">
+
+                    <!-- 病名 1 -->
+                    <div class="highlight-box highlight-box--ng" style="margin: 0;">
+                        <h3 style="color: #b91c1c;">💉 病名①：もったいない型</h3>
+                        <p><strong>【状態】：</strong>スキップ率が高く（60%以上）、保存率や維持率は良好。</p>
+                        <p style="margin-bottom: 0;"><strong>【原因と対策】：</strong>中身は非常に有益なのに、冒頭で損をしている状態。<strong>中身（本編）は変えず、冒頭のテキストやサムネイル・最初の2〜3秒の演出だけを差し替えて再テスト</strong>する。</p>
+                    </div>
+
+                    <!-- 病名 2 -->
+                    <div class="highlight-box highlight-box--tip" style="margin: 0;">
+                        <h3 style="color: #b45309;">💉 病名②：タイトル詐欺型</h3>
+                        <p><strong>【状態】：</strong>スキップ率は低い（冒頭の引きは良い）が、維持率や保存率が極端に低い。</p>
+                        <p style="margin-bottom: 0;"><strong>【原因と対策】：</strong>冒頭の期待値と動画の中身が一致しておらず、視聴者が期待外れを感じて離脱している。<strong>冒頭のフックと本編の内容を正しく整合させ、構成を整える</strong>。</p>
+                    </div>
+
+                    <!-- 病名 3 -->
+                    <div class="highlight-box highlight-box--ok" style="margin: 0;">
+                        <h3 style="color: #047857;">💉 病名③：ボランティア型</h3>
+                        <p><strong>【状態】：</strong>スキップ率・維持率・保存率はすべて良いが、フォロー転換率が低い。</p>
+                        <p style="margin-bottom: 0;"><strong>【原因と対策】：</strong>「動画単体でためになった」と満足されて終わっている。<strong>最後のCTA（行動喚起）で「このアカウントを追うべき理由・プロフィールの他の有益情報」を明記し、フォローへ誘導</strong>する。</p>
+                    </div>
+
+                </div>
+
+                <h2>3. 実践と定点観測のコツ</h2>
+                <div class="highlight-box highlight-box--homework">
+                    <h3>📊 データドリブン改善の鉄則</h3>
                     <ul>
-                        <li>ポイント1をここに記載</li>
-                        <li>ポイント2をここに記載</li>
-                        <li>ポイント3をここに記載</li>
+                        <li><strong>確認のタイミング：</strong>投稿後<strong>「24時間時点」</strong>の数値をスプレッドシート等に記録して定点観測するのが最もおすすめ。</li>
+                        <li><strong>感情に流されない：</strong>再生数の上下で一喜一憂せず、「どこがボトルネックか（冒頭か、構成か、ネタか、誘導か）」をデータから特定して淡々と改善を回しましょう。</li>
                     </ul>
                 </div>
 
-                <h2>2. メンバーの成功事例</h2>
-                <h3>◯◯さんのリール投稿</h3>
-                <p>再生回数が伸びた要因の分析。どのようなフックを使い、どのような構成だったのかを具体的に記載します。</p>
+                <div class="article-footer-nav" style="margin-top: 40px; text-align: center;">
+                    <a href="knowledge.html" class="btn btn-primary" style="display: inline-block; padding: 10px 24px; text-decoration: none; border-radius: 8px;">ノウハウ一覧へ戻る</a>
+                </div>
 
-                <h2>3. 次月へのアクションプラン</h2>
-                <p>分析結果をもとに、チーム全体で取り組むべき次のステップを記載します。</p>
             </div>
         </div>
     </main>
@@ -110,9 +194,7 @@
 
     <!-- Custom JS -->
     <script defer src="js/theme.js"></script>
-    <script defer src="js/main.js"></script>
-
-
+    <script defer src="js/main.js?v=2026091602"></script>
 
 </body>
 

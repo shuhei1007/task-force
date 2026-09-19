@@ -1,5 +1,15 @@
 [
   {
+    "id": "news-20260919-01",
+    "date": "2026-09-19",
+    "type": "UPDATE",
+    "typeLabel": "UPDATE",
+    "badgeClass": "badge-update",
+    "title": "2026年9月の情報共有「リールインサイト分析完全ガイド（4指標・3つの改善パターン）」を公開しました",
+    "url": "info_2026_09.html",
+    "isNew": true
+  },
+  {
     "id": "news-20260918-01",
     "date": "2026-09-18",
     "type": "RESOURCE",
