@@ -1,5 +1,15 @@
 [
   {
+    "id": "news-20260921-01",
+    "date": "2026-09-21",
+    "type": "LIVE",
+    "typeLabel": "LIVE",
+    "badgeClass": "badge-live",
+    "title": "【チームメンバー共有】きょん姐共有「バズるリールを作るための5つのポイント」を公開しました",
+    "url": "live_kyon_buzz_reels.html",
+    "isNew": true
+  },
+  {
     "id": "news-20260919-01",
     "date": "2026-09-19",
     "type": "UPDATE",
