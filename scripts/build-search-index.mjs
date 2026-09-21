@@ -138,10 +138,13 @@ for (const [file, month] of [['radio_2026_08.html', '08'], ['radio_2026_09.html'
 }
 
 await addCards('live.html', 'live', {
+    'live_qa_2026_09.html': '2026-09-21',
     'live_kyon_buzz_reels.html': '2026-09-21',
     'live_miko_miu_buzz_reels.html': '2026-09-17',
     'live_meetup_2026_09_nagoya.html': '2026-09-16',
     'live_review_2026_09.html': '2026-09-07',
+    'live_review_2026_08.html': '2026-08-25',
+    'live_annual_zoom.html': '2026-09-07',
     'live_kai9_exchange.html': '2026-09-07',
     'info_2026_09.html': '2026-09-01'
 });

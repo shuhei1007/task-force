@@ -1,5 +1,15 @@
 [
   {
+    "id": "news-20260921-02",
+    "date": "2026-09-21",
+    "type": "LIVE",
+    "typeLabel": "LIVE",
+    "badgeClass": "badge-live",
+    "title": "【ライブ集】「質問ライブ（Q&A相談会）2026年9月」を公開しました",
+    "url": "live_qa_2026_09.html",
+    "isNew": true
+  },
+  {
     "id": "news-20260921-01",
     "date": "2026-09-21",
     "type": "LIVE",

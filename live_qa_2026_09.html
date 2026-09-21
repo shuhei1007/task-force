@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- cSpell:ignore InstaCircle CTA ADHD -->
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/images/強化チームロゴ.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>質問ライブ｜2026年9月 | Instagram Circle Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=2026091602">
+</head>
+
+<body>
+    <!-- トップバー -->
+    <header class="topbar">
+        <button class="menu-toggle" id="menu-toggle" aria-label="メニューを開く">
+            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <a href="index.html" class="logo">
+            <img src="assets/images/強化チームロゴ.png" alt="強化チームロゴ" width="120" height="80">
+        </a>
+    </header>
+
+    <!-- サイドバーオーバーレイ -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- サイドバー -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="menu">
+            <button class="accordion-btn">
+                <span>メインメニュー</span>
+                <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="accordion-content">
+                <a href="news.html" class="menu-item" data-page="news">お知らせ</a>
+                <a href="knowledge.html" class="menu-item" data-page="knowledge">ノウハウ一覧</a>
+                <a href="members.html" class="menu-item" data-page="members">メンバー一覧</a>
+                <a href="prompts.html" class="menu-item" data-page="prompts">プロンプト集</a>
+                <a href="radio.html" class="menu-item" data-page="radio">ラジオ集</a>
+                <a href="live.html" class="menu-item active" data-page="live">ライブ集</a>
+            </div>
+
+            <button class="accordion-btn">
+                <span>その他</span>
+                <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+            <div class="accordion-content">
+                <a href="resources.html" class="menu-item" data-page="resources">リソース</a>
+                <a href="schedule.html" class="menu-item" data-page="schedule">スケジュール</a>
+                <a href="links.html" class="menu-item" data-page="links">関連リンク</a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content" id="app">
+        <div class="article-container article-container--wide gs-reveal">
+            <a href="live.html" class="back-link">← ライブ集に戻る</a>
+
+            <header class="article-header">
+                <div class="article-badge-wrap" style="margin-bottom: 8px;">
+                    <span class="category badge-custom badge-teal">質問ライブ</span>
+                </div>
+                <h1>質問ライブ（Q&amp;A相談会）｜2026年9月</h1>
+                <div class="article-meta">各相談者への具体的アドバイス＆全体共通の運用重要ポイントまとめ</div>
+            </header>
+
+            <div class="article-content gs-item">
+                <div class="highlight-box highlight-box--key">
+                    <h2>💡 全体に共通する運用の重要ポイント</h2>
+                    <div style="display: grid; gap: 12px; margin-top: 12px;">
+                        <div style="background: #fff; border-left: 4px solid #0d9488; padding: 12px 16px; border-radius: 4px;">
+                            <strong style="color: #0f766e; font-size: 1rem;">1. 「誰の・どんな悩みを解決するか」の解像度を上げる</strong>
+                            <p style="margin: 4px 0 0 0; font-size: 0.93rem; color: #334155;">
+                                「朝が忙しい」「週末どこに行くか迷う」など、日常の具体的な不満や悩みに直結するテーマに絞り込む。
+                            </p>
+                        </div>
+                        <div style="background: #fff; border-left: 4px solid #0d9488; padding: 12px 16px; border-radius: 4px;">
+                            <strong style="color: #0f766e; font-size: 1rem;">2. ストーリーと文脈（コンテクスト）を重視する</strong>
+                            <p style="margin: 4px 0 0 0; font-size: 0.93rem; color: #334155;">
+                                商品やノウハウを唐突に出すのではなく、フォロワーの疑問や「過去の失敗→改善」の流れを挟むことで納得感と共感を生む。
+                            </p>
+                        </div>
+                        <div style="background: #fff; border-left: 4px solid #0d9488; padding: 12px 16px; border-radius: 4px;">
+                            <strong style="color: #0f766e; font-size: 1rem;">3. 売り込み感をなくす「巻き込み型」</strong>
+                            <p style="margin: 4px 0 0 0; font-size: 0.93rem; color: #334155;">
+                                ストーリーズや質問機能でフォロワーのリアルな声を集め、「みんなの要望に応えて作った」という見せ方にする。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radio-day-list">
+
+                    <!-- 1. あおぞらさん -->
+                    <details class="radio-day radio-day--blue" open>
+                        <summary>
+                            <h2 class="radio-day-title"><span class="radio-day-meta">1</span>あおぞらさん｜冷凍ストック・レシピ系</h2>
+                        </summary>
+                        <div class="radio-day-body">
+                            <div class="highlight-box highlight-box--ng">
+                                <h3>現状と課題</h3>
+                                <p style="margin-bottom: 0;">子どもが朝自分で準備できる冷凍ストックレシピを想定しているが、需要や見せ方をどう絞るか。</p>
+                            </div>
+                            <div class="highlight-box highlight-box--ok">
+                                <h3>具体的な助言・改善ポイント</h3>
+                                <ul>
+                                    <li><strong>具体的な数字とベネフィット：</strong>1週間分まとめて準備できる「週末15分仕込みの冷凍ストック」など、具体的な数字とメリットを提示する。</li>
+                                    <li><strong>負担軽減の明確化：</strong>「朝は何もしなくていい」「子どもが自分でレンチンできる」という忙しい親の負担軽減を明確に打ち出す。</li>
+                                    <li><strong>軸をブラさない：</strong>フォロワーの意見に引っ張られすぎず、「時短・子どもでも簡単」というコンセプトの軸をブラさないことが重要。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 2. えみさん -->
+                    <details class="radio-day radio-day--orange" open>
+                        <summary>
+                            <h2 class="radio-day-title"><span class="radio-day-meta">2</span>えみさん｜甘酒×米粉スイーツ / 募集動画の分析</h2>
+                        </summary>
+                        <div class="radio-day-body">
+                            <div class="highlight-box highlight-box--ng">
+                                <h3>現状と課題</h3>
+                                <p style="margin-bottom: 0;">投稿内容に対して再生数が伸びたが、フォロワー獲得や商品購入にどう繋げるか。</p>
+                            </div>
+                            <div class="highlight-box highlight-box--ok">
+                                <h3>具体的な助言・改善ポイント</h3>
+                                <ul>
+                                    <li><strong>ギャップで需要に刺す：</strong>「甘酒×米粉」はヘルシーだが、あえて「揚げ物・ギルティ系（高カロリーに見えるもの）を罪悪感なく食べられる」といったギャップを持たせると需要に刺さりやすい。</li>
+                                    <li><strong>追う理由（期待値）の設計：</strong>プロフィールやCTA（行動喚起）へ誘導する前に、投稿自体に「次も見たい」「この人を追いたい」と思わせる明確な期待値を持たせる。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 3. ゆうきさん -->
+                    <details class="radio-day radio-day--purple" open>
+                        <summary>
+                            <h2 class="radio-day-title"><span class="radio-day-meta">3</span>ゆうきさん｜ADHD関連・伸びる企画の見つけ方</h2>
+                        </summary>
+                        <div class="radio-day-body">
+                            <div class="highlight-box highlight-box--ng">
+                                <h3>現状と課題</h3>
+                                <p style="margin-bottom: 0;">企画アイデア出しや、伸びている投稿の共通項をどう見つけるか。</p>
+                            </div>
+                            <div class="highlight-box highlight-box--ok">
+                                <h3>具体的な助言・改善ポイント</h3>
+                                <ul>
+                                    <li><strong>思考や行動を抽象化：</strong>伸びている投稿を複数リサーチし、「思考」や「行動」の特徴を抽象化する。</li>
+                                    <li><strong>行動の裏にある思考の言語化：</strong>「なぜその行動をするのか」「一見普通じゃない行動の裏にある思考」を言語化して提示すると、強い共感や関心を集めやすくなる。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 4. みきさん -->
+                    <details class="radio-day radio-day--pink" open>
+                        <summary>
+                            <h2 class="radio-day-title"><span class="radio-day-meta">4</span>みきさん｜50代・ハンドメイド×挑戦・導線</h2>
+                        </summary>
+                        <div class="radio-day-body">
+                            <div class="highlight-box highlight-box--ng">
+                                <h3>現状と課題</h3>
+                                <p style="margin-bottom: 0;">「50代からの挑戦」と「ハンドメイド」の発信をどう組み合わせるか。</p>
+                            </div>
+                            <div class="highlight-box highlight-box--ok">
+                                <h3>具体的な助言・改善ポイント</h3>
+                                <ul>
+                                    <li><strong>挑戦する物語をベースに：</strong>単に作品を見せるだけでなく、「挑戦する物語（ストーリー）」をベースにする。</li>
+                                    <li><strong>高低差のあるストーリー構成：</strong>「マイナスな状態・悩み」→「挑戦・試行錯誤」→「成果や気づき」という高低差（ストーリー構成）を投稿に組み込むことで、ファン化・応援に繋がりやすくなる。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 5. かるがもさん -->
+                    <details class="radio-day radio-day--green" open>
+                        <summary>
+                            <h2 class="radio-day-title"><span class="radio-day-meta">5</span>かるがもさん｜体調改善・ヨガの訴求</h2>
+                        </summary>
+                        <div class="radio-day-body">
+                            <div class="highlight-box highlight-box--ng">
+                                <h3>現状と課題</h3>
+                                <p style="margin-bottom: 0;">普段の食事改善レシピから、ヨガの案内や別サービスへ繋げたい。</p>
+                            </div>
+                            <div class="highlight-box highlight-box--ok">
+                                <h3>具体的な助言・改善ポイント</h3>
+                                <ul>
+                                    <li><strong>フォロワーの声を起点にする：</strong>いきなりヨガを押し出すと「売り込み」に見えるため、「食事改善に取り組んだフォロワーの声」を起点にする。</li>
+                                    <li><strong>自然なステップ・文脈を作る：</strong>「食事の次は運動（ヨガ）も取り入れたらさらに効果が出た」という自然なステップ・文脈を作って案内する。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 6. かすみさん -->
+                    <details class="radio-day radio-day--teal" open>
+                        <summary>
+                            <h2 class="radio-day-title"><span class="radio-day-meta">6</span>かすみさん｜レシピ・有料商品の販売</h2>
+                        </summary>
+                        <div class="radio-day-body">
+                            <div class="highlight-box highlight-box--ng">
+                                <h3>現状と課題</h3>
+                                <p style="margin-bottom: 0;">レシピ投稿から有料note等の商品販売へどう繋げるか。</p>
+                            </div>
+                            <div class="highlight-box highlight-box--ok">
+                                <h3>具体的な助言・改善ポイント</h3>
+                                <ul>
+                                    <li><strong>巻き込み型の商品設計：</strong>普段から「どんな悩みがあるか」「どんなレシピが欲しいか」をフォロワーに投げかけ、需要を確認しながら商品を作る。</li>
+                                    <li><strong>「求められたから作った」の形：</strong>「求められたから作った」という形にすることで、売り込み感を消して自然に購入へ繋げる。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 7. みずきさん -->
+                    <details class="radio-day radio-day--gold" open>
+                        <summary>
+                            <h2 class="radio-day-title"><span class="radio-day-meta">7</span>みずきさん｜運用代行の案件獲得・進め方</h2>
+                        </summary>
+                        <div class="radio-day-body">
+                            <div class="highlight-box highlight-box--ng">
+                                <h3>現状と課題</h3>
+                                <p style="margin-bottom: 0;">企業案件の進め方や、何をどこまで請け負うべきか。</p>
+                            </div>
+                            <div class="highlight-box highlight-box--ok">
+                                <h3>具体的な助言・改善ポイント</h3>
+                                <ul>
+                                    <li><strong>目的・ゴールのすり合わせ：</strong>クライアントが「採用」「集客」「認知」のどれを目的にしているかを最初にヒアリングし、ゴールをすり合わせる。</li>
+                                    <li><strong>導線設計を含めた提案と境界線の明確化：</strong>「単なる作業（投稿作成）」ではなく、目的達成のための「導線設計」まで含めた提案・境界線（自分ができる範囲）を明確にしておく。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- 8. おでかけ系 -->
+                    <details class="radio-day radio-day--blue" open>
+                        <summary>
+                            <h2 class="radio-day-title"><span class="radio-day-meta">8</span>おでかけ系｜大分・子連れスポット</h2>
+                        </summary>
+                        <div class="radio-day-body">
+                            <div class="highlight-box highlight-box--ng">
+                                <h3>現状と課題</h3>
+                                <p style="margin-bottom: 0;">地域や家族層に向けた発信の差別化。</p>
+                            </div>
+                            <div class="highlight-box highlight-box--ok">
+                                <h3>具体的な助言・改善ポイント</h3>
+                                <ul>
+                                    <li><strong>ターゲットと利用シーンの絞り込み：</strong>単なるスポット紹介ではなく、「4人家族」「週末どこ行く？を解決」など、ターゲットと利用シーンを具体的に絞り込む。</li>
+                                    <li><strong>週末スケジュールの提案：</strong>具体的な地域名（例：大分）を入れつつ、週末のスケジュールや充実した過ごし方を提案する形にする。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                </div>
+
+                <div class="article-footer-nav" style="margin-top: 30px; text-align: center;">
+                    <a href="live.html" class="btn btn-primary" style="display: inline-block; padding: 10px 24px; text-decoration: none; border-radius: 8px;">ライブ集一覧へ戻る</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Instagram Circle Dashboard. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="js/theme.js"></script>
+    <script defer src="js/main.js?v=2026091602"></script>
+</body>
+
+</html>
