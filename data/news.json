@@ -1,5 +1,15 @@
 [
   {
+    "id": "news-20260926-01",
+    "date": "2026-09-26",
+    "type": "UPDATE",
+    "typeLabel": "UPDATE",
+    "badgeClass": "badge-update",
+    "title": "2026年10月のiサークル予定表・月間行動目標（競合調査）を公開しました",
+    "url": "schedule.html",
+    "isNew": true
+  },
+  {
     "id": "news-20260921-02",
     "date": "2026-09-21",
     "type": "LIVE",

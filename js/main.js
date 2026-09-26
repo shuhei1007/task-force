@@ -1,12 +1,22 @@
 const ICIRCLE_EVENTS = [
-    { date: '2026-09-18', title: 'あつくん質問ライブ', detail: 'テーマ：アカウント設計' },
-    { date: '2026-09-21', title: 'えれな添削ライブ', detail: '添削ライブ' },
-    { date: '2026-09-22', title: 'いつき質問ライブ', detail: 'oVice開催' },
-    { date: '2026-09-24', title: 'りこぴん めざ5道場', detail: 'オンライン開催' },
-    { date: '2026-09-25', title: 'コミュニティライブ', detail: '文化祭・最新情報を公開' },
-    { date: '2026-09-26', title: '年払い限定 ZOOM交流会', detail: 'オンライン交流会' },
     { date: '2026-09-28', title: 'あつくん添削ライブ', detail: '添削ライブ' },
-    { date: '2026-09-29', title: 'りこぴん質問ライブ', detail: 'テーマ：投稿' }
+    { date: '2026-09-29', title: 'りこぴん質問ライブ', detail: 'テーマ：投稿 QA' },
+    { date: '2026-10-02', title: 'えれな質問ライブ', detail: 'テーマ：アカウント設計 QA' },
+    { date: '2026-10-05', title: 'りこぴん特別ライブ', detail: 'AI活用勉強会（SPECIAL）' },
+    { date: '2026-10-06', title: 'nami質問ライブ', detail: 'テーマ：マネタイズ QA' },
+    { date: '2026-10-08', title: 'あっくん めざ5道場', detail: 'めざ5道場 🥋' },
+    { date: '2026-10-09', title: 'しゃけ質問ライブ', detail: 'oVice開催' },
+    { date: '2026-10-12', title: 'いつき添削ライブ', detail: '添削ライブ' },
+    { date: '2026-10-13', title: 'りこぴん質問ライブ', detail: 'お昼開催（oVice）' },
+    { date: '2026-10-16', title: 'いつき質問ライブ', detail: 'テーマ：投稿 QA' },
+    { date: '2026-10-19', title: 'えれな添削ライブ', detail: '添削ライブ' },
+    { date: '2026-10-20', title: 'iサークル生 実績者対談', detail: '今月の対談：5期生おはるさん（月56万円達成の道のり）' },
+    { date: '2026-10-22', title: 'しゃけ めざ5道場', detail: 'めざ5道場 🥋' },
+    { date: '2026-10-22', title: '年払い限定 ZOOM交流会', detail: 'オンライン交流会' },
+    { date: '2026-10-23', title: 'あっくん質問ライブ', detail: 'oVice開催' },
+    { date: '2026-10-26', title: 'あっくん添削ライブ', detail: '添削ライブ' },
+    { date: '2026-10-27', title: 'えれな質問ライブ', detail: '質問ライブ QA' },
+    { date: '2026-10-30', title: 'コミュニティライブ', detail: 'テーマ：あなたの声で決めるこれからの話（SPECIAL）' }
 ];
 
 window.ICIRCLE_EVENTS = ICIRCLE_EVENTS;
@@ -144,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const img = document.getElementById("icircle-schedule-img");
         if (!tabs.length || !img) return;
 
-        const monthLabels = { "08": "8月", "09": "9月" };
+        const monthLabels = { "08": "8月", "09": "9月", "10": "10月" };
 
         function showMonth(month) {
             const src = img.getAttribute(`data-src-${month}`);
@@ -177,7 +187,9 @@ document.addEventListener("DOMContentLoaded", () => {
             'live_meetup_2026_09_nagoya.html': '2026-09-16',
             'live_review_2026_09.html': '2026-09-07',
             'live_kai9_exchange.html': '2026-09-07',
+            'info_2026_10.html': '2026-10-01',
             'info_2026_09.html': '2026-09-01',
+            'radio_2026_10.html': '2026-10-01',
             'radio_2026_09.html': '2026-09-26',
             'radio_2026_08.html': '2026-08-31'
         };

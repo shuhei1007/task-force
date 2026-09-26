@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'info_2026_07.html': '2026-07-31',
         'info_2026_08.html': '2026-08-21',
         'info_2026_09.html': '2026-09-01',
+        'info_2026_10.html': '2026-10-01',
         'guides/youtube-reels-5tips.html': '2026-09-16',
         'guides/worldview-guide.html': '2026-09-07',
         'guides/comment-dm-automation.html': '2026-09-07'
