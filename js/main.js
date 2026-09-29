@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'info_2026_10.html': '2026-10-01',
             'info_2026_09.html': '2026-09-01',
             'radio_2026_10.html': '2026-10-01',
-            'radio_2026_09.html': '2026-09-28',
+            'radio_2026_09.html': '2026-09-29',
             'radio_2026_08.html': '2026-08-31'
         };
 
