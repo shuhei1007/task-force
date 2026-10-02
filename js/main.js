@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'live_kai9_exchange.html': '2026-09-07',
             'info_2026_10.html': '2026-10-01',
             'info_2026_09.html': '2026-09-01',
-            'radio_2026_10.html': '2026-10-01',
+            'radio_2026_10.html': '2026-10-02',
             'radio_2026_09.html': '2026-09-30',
             'radio_2026_08.html': '2026-08-31'
         };
