@@ -24,6 +24,15 @@
 .starter-links strong { font-size: .92rem; }
 .starter-links small { color: #68786f; font-size: .8rem; margin-top: 3px; }
 .starter-number { font-size: .8rem; font-weight: 700; }
+.concern-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.concern-card { display: flex; flex-direction: column; align-items: flex-start; padding: 20px; background: #f5f8f6; border-radius: 12px; }
+.concern-card h3 { color: #2c4c3b; font-size: 1.05rem; margin-bottom: 7px; }
+.concern-card p { color: #68786f; font-size: .86rem; margin-bottom: 16px; }
+.concern-card a { color: #36564a; font-size: .85rem; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.concern-card a:first-of-type { margin-top: auto; }
+.concern-card .concern-secondary { color: #526d60; font-size: .78rem; font-weight: 400; margin-top: 10px; }
+.concern-card a:hover { color: #203e30; }
+.concern-card a:focus-visible { outline: 3px solid #547a68; outline-offset: 5px; border-radius: 4px; }
 .action-steps a:hover, .starter-links a:hover { color: #203e30; }
 .action-steps a:focus-visible, .starter-links a:focus-visible, .getting-started summary:focus-visible { outline: 3px solid #547a68; outline-offset: 5px; border-radius: 4px; }
 
@@ -31,6 +40,7 @@
     .action-steps { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
+    .concern-grid { grid-template-columns: 1fr; }
     .action-section .dashboard-section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
     .action-steps li { padding: 16px; }
 }

@@ -27,6 +27,11 @@ jobs:
         with:
           node-version: 22
 
+      - name: データとホームの月間切り替えを検証
+        run: |
+          npm run validate
+          node --test tests/home-plan.test.mjs
+
       - name: 検索データを生成
         run: node scripts/build-search-index.mjs
 

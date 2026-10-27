@@ -15,7 +15,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css?v=2026091602">
-    <link rel="stylesheet" href="css/dashboard.css?v=2026102701">
+    <link rel="stylesheet" href="css/dashboard.css?v=2026102702">
 </head>
 
 <body>
@@ -92,27 +92,61 @@
                     <div><p class="section-kicker">YOUR NEXT STEP</p><h2 id="weekly-actions-title">今週やること</h2></div>
                     <span class="action-label">おすすめの3ステップ</span>
                 </div>
-                <p class="action-intro">競合調査から、次の投稿のヒントを見つけてみましょう。自分のペースで、できるところから。</p>
-                <ol class="action-steps">
+                <p class="action-intro" id="weekly-actions-intro">自分の課題に合わせて、学ぶ・試す・振り返るの3ステップを進めましょう。</p>
+                <ol class="action-steps" id="weekly-action-steps">
                     <li>
                         <span class="action-number" aria-hidden="true">01</span>
-                        <h3>調べるポイントを知る</h3>
-                        <p>競合のどこを見るか、まずは教材で確認しましょう。</p>
-                        <a href="guides/account-research.html">競合分析の教材を読む <span aria-hidden="true">→</span></a>
+                        <h3>今の課題を1つ決める</h3>
+                        <p>運用の流れを見直し、今取り組みたいことを選びましょう。</p>
+                        <a href="guides/roadmap.html">ロードマップを見る <span aria-hidden="true">→</span></a>
                     </li>
                     <li>
                         <span class="action-number" aria-hidden="true">02</span>
-                        <h3>気づきをシートに残す</h3>
-                        <p>気になるアカウントを選び、伸びている投稿の共通点を記録。</p>
-                        <a href="https://docs.google.com/spreadsheets/d/1_w0BX4ov2eqXxbYbAXNsrcCL1gTtT055JxN-am-stPQ/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer">競合分析シートを開く <span aria-hidden="true">↗</span><span class="visually-hidden">（新しいタブ）</span></a>
+                        <h3>必要な教材で学ぶ</h3>
+                        <p>下の「悩みから探す」や教材一覧から、課題に合う内容を確認。</p>
+                        <a href="knowledge.html">教材を探す <span aria-hidden="true">→</span></a>
                     </li>
                     <li>
                         <span class="action-number" aria-hidden="true">03</span>
-                        <h3>次の投稿で1つ試す</h3>
-                        <p>取り入れたい工夫を1つ決めて、投稿後に気づきを振り返りましょう。</p>
-                        <a href="https://docs.google.com/spreadsheets/d/1lTXk_OujITKDel_6G0kz0kI6F76fScWW2lA50AP68Bo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">振り返りシートを開く <span aria-hidden="true">↗</span><span class="visually-hidden">（新しいタブ）</span></a>
+                        <h3>投稿で試して振り返る</h3>
+                        <p>学んだ工夫を1つ試し、気づきと次の行動を記録しましょう。</p>
+                        <a href="resources.html">振り返り資料を探す <span aria-hidden="true">→</span></a>
                     </li>
                 </ol>
+            </section>
+
+            <section class="dashboard-section concern-section" aria-labelledby="concerns-title">
+                <div class="dashboard-section-heading">
+                    <div><p class="section-kicker">FIND YOUR ANSWER</p><h2 id="concerns-title">悩みから探す</h2></div>
+                    <a href="knowledge.html">教材をすべて見る →</a>
+                </div>
+                <p class="action-intro">今の悩みに近いものから、役立つ教材へ。</p>
+                <div class="concern-grid">
+                    <article class="concern-card">
+                        <h3>リールの再生数が伸びない</h3>
+                        <p>数字を見て、どこを改善するか見つけましょう。</p>
+                        <a href="info_2026_09.html">インサイト分析の教材へ →</a>
+                        <a class="concern-secondary" href="guides/reels-guide.html">リールの基本から確認する →</a>
+                    </article>
+                    <article class="concern-card">
+                        <h3>フォロワーが増えない</h3>
+                        <p>フォローしたくなる理由が伝わるか、見直してみましょう。</p>
+                        <a href="guides/account-profile.html">プロフィール設計の教材へ →</a>
+                        <a class="concern-secondary" href="guides/account-concept.html">発信のコンセプトを見直す →</a>
+                    </article>
+                    <article class="concern-card">
+                        <h3>何を投稿すればいいか迷う</h3>
+                        <p>見ている人のニーズと、投稿の切り口を探しましょう。</p>
+                        <a href="guides/account-research.html">ニーズ調査・競合分析の教材へ →</a>
+                        <a class="concern-secondary" href="guides/writing-guide.html">伝わる文章の作り方を読む →</a>
+                    </article>
+                    <article class="concern-card">
+                        <h3>収益化の始め方が分からない</h3>
+                        <p>どんな方法があるかを知り、自分に合う方向を考えましょう。</p>
+                        <a href="guides/monetize-types.html">収益化の種類を知る →</a>
+                        <a class="concern-secondary" href="guides/monetize-mindset.html">取り組む前の考え方を読む →</a>
+                    </article>
+                </div>
             </section>
 
             <details class="dashboard-section getting-started">
@@ -137,12 +171,12 @@
                 </article>
 
                 <article class="dashboard-panel monthly-focus-panel">
-                    <div class="dashboard-panel-heading"><div><p class="section-kicker" id="monthly-kicker">OCTOBER</p><h2>今月の目標・担当</h2></div></div>
+                    <div class="dashboard-panel-heading"><div><p class="section-kicker" id="monthly-kicker">THIS MONTH</p><h2>今月の目標・担当</h2></div></div>
                     <dl class="monthly-focus-list" id="monthly-focus-list">
-                        <div><dt>今月の行動目標</dt><dd>競合調査</dd></div>
+                        <div><dt>今月の行動目標</dt><dd>チーム資料をご確認ください</dd></div>
                         <div><dt>今週の担当</dt><dd class="unregistered">未登録</dd></div>
                     </dl>
-                    <p class="dashboard-note" id="monthly-note">担当情報は確定後に掲載します。現在は各チーム資料をご確認ください。</p>
+                    <p class="dashboard-note" id="monthly-note">最新の目標・担当は、チーム資料をご確認ください。</p>
                     <a class="dashboard-text-link" id="monthly-resource-link" href="resources.html">強化チーム資料を開く →</a>
                 </article>
             </section>
@@ -209,7 +243,7 @@
     <!-- Custom JS -->
     <script defer src="js/theme.js"></script>
     <script defer src="js/main.js?v=2026091602"></script>
-    <script defer src="js/dashboard.js?v=2026091801"></script>
+    <script type="module" src="js/dashboard.js?v=2026102702"></script>
 
 
 

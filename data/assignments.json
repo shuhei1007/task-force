@@ -1,9 +1,18 @@
 {
+  "period": "2026-10",
   "month": "10",
   "monthLabel": "OCTOBER",
   "monthlyGoal": "競合調査",
   "weeklyDuty": "未登録",
   "isDutyRegistered": false,
   "note": "担当情報は確定後に掲載します。現在は各チーム資料をご確認ください。",
-  "resourceLink": "resources.html"
+  "resourceLink": "resources.html",
+  "weeklyPlan": {
+    "intro": "10月の目標は「競合調査」。競合の投稿からヒントを見つけ、次の投稿で1つ試してみましょう。",
+    "steps": [
+      { "title": "調べるポイントを知る", "description": "競合のどこを見るか、まずは教材で確認しましょう。", "label": "競合分析の教材を読む", "url": "guides/account-research.html" },
+      { "title": "気づきをシートに残す", "description": "気になるアカウントを選び、伸びている投稿の共通点を記録。", "label": "競合分析シートを開く", "url": "https://docs.google.com/spreadsheets/d/1_w0BX4ov2eqXxbYbAXNsrcCL1gTtT055JxN-am-stPQ/edit?gid=0#gid=0" },
+      { "title": "次の投稿で1つ試す", "description": "取り入れたい工夫を1つ決めて、投稿後に気づきを振り返りましょう。", "label": "振り返りシートを開く", "url": "https://docs.google.com/spreadsheets/d/1lTXk_OujITKDel_6G0kz0kI6F76fScWW2lA50AP68Bo/edit?usp=sharing" }
+    ]
+  }
 }

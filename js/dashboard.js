@@ -1,3 +1,5 @@
+import { getHomePlan, isSafeHomeLink } from './home-plan.js';
+
 /**
  * Dashboard Dynamic Loader
  * data/*.json から情報を非同期取得し、ホーム画面（ダッシュボード）を自動描画します。
@@ -57,35 +59,40 @@ async function initNextEvent() {
 }
 
 // 2. 今月の目標・今週の担当（assignments.json）
-async function initAssignments() {
+export async function initAssignments() {
     const list = document.getElementById('monthly-focus-list');
     if (!list) return;
 
+    let assignments = null;
     try {
-        const res = await fetch('data/assignments.json');
-        if (!res.ok) return;
-        const data = await res.json();
-
-        if (data.monthLabel) {
-            const kicker = document.getElementById('monthly-kicker');
-            if (kicker) kicker.textContent = data.monthLabel;
-        }
-
-        const dutyClass = data.isDutyRegistered ? '' : ' class="unregistered"';
-        list.innerHTML = `
-            <div><dt>今月の行動目標</dt><dd>${escapeHtml(data.monthlyGoal || '未設定')}</dd></div>
-            <div><dt>今週の担当</dt><dd${dutyClass}>${escapeHtml(data.weeklyDuty || '未登録')}</dd></div>
-        `;
-
-        if (data.note) {
-            const note = document.getElementById('monthly-note');
-            if (note) note.textContent = data.note;
-        }
-        if (data.resourceLink) {
-            const link = document.getElementById('monthly-resource-link');
-            if (link) link.href = data.resourceLink;
-        }
+        const res = await fetch('data/assignments.json', { cache: 'no-cache' });
+        if (res.ok) assignments = await res.json();
     } catch (_err) {}
+
+    const { period, assignment: data, weeklyPlan } = getHomePlan(assignments);
+    const kicker = document.getElementById('monthly-kicker');
+    if (kicker) kicker.textContent = period.replace('-', ' / ');
+    const dutyClass = data?.isDutyRegistered ? '' : ' class="unregistered"';
+    list.innerHTML = `
+        <div><dt>今月の行動目標</dt><dd>${escapeHtml(data?.monthlyGoal || '案内を準備中です')}</dd></div>
+        <div><dt>今週の担当</dt><dd${dutyClass}>${escapeHtml(data?.weeklyDuty || '未登録')}</dd></div>
+    `;
+    const note = document.getElementById('monthly-note');
+    if (note) note.textContent = data?.note || '最新の目標・担当は、チーム資料をご確認ください。';
+    const link = document.getElementById('monthly-resource-link');
+    if (link) link.href = isSafeHomeLink(data?.resourceLink) ? data.resourceLink : 'resources.html';
+
+    const intro = document.getElementById('weekly-actions-intro');
+    if (intro) intro.textContent = weeklyPlan.intro;
+    const steps = document.getElementById('weekly-action-steps');
+    if (steps) steps.innerHTML = weeklyPlan.steps.map((step, index) => {
+        const external = step.url.startsWith('https://');
+        return `<li>
+            <span class="action-number" aria-hidden="true">0${index + 1}</span>
+            <h3>${escapeHtml(step.title)}</h3><p>${escapeHtml(step.description)}</p>
+            <a href="${escapeHtml(step.url)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${escapeHtml(step.label)} <span aria-hidden="true">${external ? '↗' : '→'}</span>${external ? '<span class="visually-hidden">（新しいタブ）</span>' : ''}</a>
+        </li>`;
+    }).join('');
 }
 
 // 3. 最新のお知らせ（news.json）

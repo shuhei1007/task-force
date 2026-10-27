@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { isValidWeeklyPlan } from '../js/home-plan.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -153,6 +154,16 @@ if (Array.isArray(schedule)) {
 // --- D. assignments.json の検証 ---
 const assignments = loadAndValidateJSON('assignments.json');
 if (assignments) {
+  if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(assignments.period || '')) {
+    addError('assignments.json', "periodをYYYY-MM形式で設定してください");
+  }
+  if (!isValidWeeklyPlan(assignments.weeklyPlan)) {
+    addError('assignments.json', 'weeklyPlanには説明と、タイトル・本文・リンク名・安全なURLを持つ3ステップが必要です');
+  } else {
+    assignments.weeklyPlan.steps.forEach((step, index) => {
+      checkUrlExists(step.url, 'assignments.json', `weeklyPlan.steps[${index}]`);
+    });
+  }
   if (Array.isArray(assignments.monthlyFocus) && Array.isArray(assignments.weeklyRoles)) {
     // リスト形式の場合
   } else if (assignments.monthlyGoal) {
