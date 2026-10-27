@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="assets/images/強化チームロゴ.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Circle Dashboard</title>
+    <title>ホーム | 9期生強化チーム</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css?v=2026091602">
-    <link rel="stylesheet" href="css/dashboard.css?v=2026091801">
+    <link rel="stylesheet" href="css/dashboard.css?v=2026102701">
 </head>
 
 <body>
@@ -79,13 +79,51 @@
                 <div>
                     <p class="section-kicker">TEAM DASHBOARD</p>
                     <h1>ホーム</h1>
-                    <p>今日必要な予定・更新情報・資料を、ここからすぐ確認できます。</p>
+                    <p>今週の一歩を決めて、学びを投稿につなげよう。</p>
                 </div>
                 <a href="search.html" class="dashboard-search-link">
                     <svg aria-hidden="true" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
                     サイト内を検索
                 </a>
             </header>
+
+            <section class="dashboard-section action-section" aria-labelledby="weekly-actions-title">
+                <div class="dashboard-section-heading">
+                    <div><p class="section-kicker">YOUR NEXT STEP</p><h2 id="weekly-actions-title">今週やること</h2></div>
+                    <span class="action-label">おすすめの3ステップ</span>
+                </div>
+                <p class="action-intro">競合調査から、次の投稿のヒントを見つけてみましょう。自分のペースで、できるところから。</p>
+                <ol class="action-steps">
+                    <li>
+                        <span class="action-number" aria-hidden="true">01</span>
+                        <h3>調べるポイントを知る</h3>
+                        <p>競合のどこを見るか、まずは教材で確認しましょう。</p>
+                        <a href="guides/account-research.html">競合分析の教材を読む <span aria-hidden="true">→</span></a>
+                    </li>
+                    <li>
+                        <span class="action-number" aria-hidden="true">02</span>
+                        <h3>気づきをシートに残す</h3>
+                        <p>気になるアカウントを選び、伸びている投稿の共通点を記録。</p>
+                        <a href="https://docs.google.com/spreadsheets/d/1_w0BX4ov2eqXxbYbAXNsrcCL1gTtT055JxN-am-stPQ/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer">競合分析シートを開く <span aria-hidden="true">↗</span><span class="visually-hidden">（新しいタブ）</span></a>
+                    </li>
+                    <li>
+                        <span class="action-number" aria-hidden="true">03</span>
+                        <h3>次の投稿で1つ試す</h3>
+                        <p>取り入れたい工夫を1つ決めて、投稿後に気づきを振り返りましょう。</p>
+                        <a href="https://docs.google.com/spreadsheets/d/1lTXk_OujITKDel_6G0kz0kI6F76fScWW2lA50AP68Bo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">振り返りシートを開く <span aria-hidden="true">↗</span><span class="visually-hidden">（新しいタブ）</span></a>
+                    </li>
+                </ol>
+            </section>
+
+            <details class="dashboard-section getting-started">
+                <summary><span><span class="section-kicker">START HERE</span><span class="getting-started-title">初めての方はこちら</span><span class="getting-started-description">何から読むか迷ったら、この3本から。</span></span><span class="getting-started-toggle" aria-hidden="true">＋</span></summary>
+                <ol class="starter-links">
+                    <li><a href="guides/roadmap.html"><span class="starter-number">01</span><span><strong>運用の全体像をつかむ</strong><small>ロードマップで、これからの流れを確認。</small></span><span aria-hidden="true">→</span></a></li>
+                    <li><a href="guides/account-self-analysis.html"><span class="starter-number">02</span><span><strong>自分の強みを整理する</strong><small>自己分析から、発信の軸を見つける。</small></span><span aria-hidden="true">→</span></a></li>
+                    <li><a href="guides/account-concept.html"><span class="starter-number">03</span><span><strong>誰に何を届けるか決める</strong><small>コンセプトを考えて、アカウントの方向性を固める。</small></span><span aria-hidden="true">→</span></a></li>
+                </ol>
+                <a class="dashboard-text-link" href="knowledge.html">ほかの教材を探す →</a>
+            </details>
 
             <section class="dashboard-overview" aria-label="予定と今月の目標">
                 <article class="dashboard-panel next-event-panel">
