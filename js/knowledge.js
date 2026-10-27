@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
 
     const updateDates = {
+        'info_harutora.html': '2026-10-27',
         'info_2026_07.html': '2026-07-31',
         'info_2026_08.html': '2026-08-21',
         'info_2026_09.html': '2026-09-01',
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'guides/comment-dm-automation.html': '2026-09-07'
     };
     const addedItems = new Set([
+        'info_harutora.html',
         'guides/youtube-reels-5tips.html',
         'guides/comment-dm-automation.html'
     ]);
